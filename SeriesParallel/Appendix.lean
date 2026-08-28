@@ -1,0 +1,31 @@
+import SeriesParallel.Appendix.BasicDefs
+import SeriesParallel.Appendix.CubeRootComparison
+import SeriesParallel.Appendix.Shooting
+import SeriesParallel.Appendix.AdmissibleParameters
+import SeriesParallel.Appendix.AdmissibleLowerBound
+import SeriesParallel.Appendix.AdmissibleHalfline
+import SeriesParallel.Appendix.SubcriticalW
+import SeriesParallel.Appendix.EndpointAsymptotics
+import SeriesParallel.Appendix.LeftEndpointDichotomy
+import SeriesParallel.Appendix.CriticalBranches
+import SeriesParallel.Appendix.FiniteAsymptoticODE
+import SeriesParallel.Appendix.LinearBranchRegularity
+import SeriesParallel.Appendix.Profiles
+import SeriesParallel.Appendix.WaveProfile
+import SeriesParallel.Appendix.ProfileMeasures
+import SeriesParallel.Appendix.WaveProfileAssembly
+import SeriesParallel.Appendix.WaveProfileEstimates
+import SeriesParallel.Appendix.WaveProfileConclusion
+import SeriesParallel.Appendix.HardEdgeProfile
+import SeriesParallel.Appendix.HardEdgeConsequences
+import SeriesParallel.Appendix.HardEdgeProfileEstimates
+import SeriesParallel.Appendix.HardEdgeMeasures
+import SeriesParallel.Appendix.HardEdgeAssembly
+import SeriesParallel.Appendix.HardEdgeExtension
+import SeriesParallel.Appendix.HardEdgeProfileConclusion
+
+/-!
+# Series--parallel appendix formalization
+
+Dependency-ordered aggregate import for the two appendices of the source paper.
+-/
