@@ -1,4 +1,5 @@
 import SeriesParallel.MainText.MainTheorems
+import SeriesParallel.MainText.GraphSemantics
 
 /-!
 # Main-text aggregate

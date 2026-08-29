@@ -16,10 +16,42 @@ import re
 import sys
 
 
-EXPECTED_TOTAL = 156
-EXPECTED_MAIN = 112
-EXPECTED_APPENDIX = 44
+EXPECTED_TOTAL = 136
+EXPECTED_MAIN = 98
+EXPECTED_APPENDIX = 38
 APPENDIX_BOUNDARY = "app:ode"
+REQUIRED_ACTIVE_LABELS = {
+    "fig:series-parallel-replacement",
+    "low_barrier_init",
+    "low_one_step",
+    "lem:shooting-properties",
+}
+RETIRED_LABELS = {
+    "eq:speed-values",
+    "eq:first-moment-rate-definitions",
+    "eq:distance-near-critical-speed",
+    "eq:parallel-gate",
+    "eq:Iminus",
+    "eq:Iplus",
+    "eq:normalized-L2",
+    "eq:a-zeta",
+    "eq:one-step-upper-expansion",
+    "eq:upper-translation-expansion",
+    "eq:upper-cutoff-location",
+    "eq:upper-truncated-cdf",
+    "eq:global-upper-barrier",
+    "eq:upper-d-of-x",
+    "eq:upper-series-cutoff-error",
+    "eq:hard-edge-scaled-cdf",
+    "eq:global-lower-barrier-negative-bias",
+    "lem:property of y",
+    "eq:forward-integral",
+    "eq:W-expansion-zero",
+    "eq:W-expansion-one",
+    "eq:Y-zero-equation",
+    "eq:Y-one-equation",
+    "eq:full-line-profile-coordinate",
+}
 MOVED_LABELS = {
     "prop:full-line-distribution",
     "eq:Phi-phase-definition",
@@ -145,9 +177,13 @@ def describe_difference(expected: set[str], actual: set[str]) -> tuple[list[str]
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--tex", type=Path, default=Path("Series-Parallel_SPA_submission.tex"))
+    parser.add_argument(
+        "--tex", type=Path, default=Path("Distance_and_resistance_SPA_revised_blue.tex")
+    )
     parser.add_argument("--source-map", type=Path, default=Path("SOURCE_MAP.md"))
-    parser.add_argument("--main-source-map", type=Path)
+    parser.add_argument(
+        "--main-source-map", type=Path, default=Path("MAIN_TEXT_SOURCE_MAP.md")
+    )
     args = parser.parse_args()
 
     try:
@@ -183,6 +219,13 @@ def main() -> int:
         errors.append(f"appendix={len(appendix_labels)}, expected={EXPECTED_APPENDIX}")
     if duplicates:
         errors.append(f"duplicate={duplicates}")
+    missing_required = sorted(REQUIRED_ACTIVE_LABELS - active_set)
+    present_retired = sorted(RETIRED_LABELS & active_set)
+    if missing_required or present_retired:
+        errors.append(
+            f"label revision contract: missing-required={missing_required}, "
+            f"present-retired={present_retired}"
+        )
     wrong_moved = sorted(MOVED_LABELS - main_set)
     moved_in_appendix = sorted(MOVED_LABELS & appendix_set)
     if wrong_moved or moved_in_appendix:
@@ -233,6 +276,11 @@ def main() -> int:
         f"source-lines={rows[0][1]}..{rows[-1][1]}"
     )
     print(f"moved labels owned by main: {len(MOVED_LABELS & main_set)} / {len(MOVED_LABELS)}")
+    print(
+        f"required active labels: {len(REQUIRED_ACTIVE_LABELS & active_set)} / "
+        f"{len(REQUIRED_ACTIVE_LABELS)}; retired labels present: "
+        f"{len(RETIRED_LABELS & active_set)}"
+    )
     if errors:
         for error in errors:
             print(f"ERROR: {error}")

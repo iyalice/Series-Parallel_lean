@@ -1,0 +1,34 @@
+# Lean/Lake build state and downloaded dependencies
+.lake/
+
+# Python audit caches
+__pycache__/
+*.py[cod]
+
+# Temporary audit manifests
+project-axioms.tsv
+main-text-axioms.out
+
+# TeX build products
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.pdf
+*.synctex.gz
+
+# Superseded manuscript variants kept only as local working history
+Series-Parallelv2_A2-Lean-proof.tex
+Series_Parallelv2_revised*.tex
+
+# Internal coordination and historical reports
+AGENT_OWNERSHIP.md
+MAIN_TEXT_*.md
+Series_Parallelv2_*.md
+Series_Parallel_v3_logic_language_AI_audit_*.md
+
+# Obsolete journal-template files; the canonical SPA manuscript uses Elsevier CAS
+imsart-number.bst
+imsart.cls
+imsart.sty

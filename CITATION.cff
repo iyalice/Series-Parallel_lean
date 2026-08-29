@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite the accompanying article and this software."
+title: "Lean 4 formalization for Distance and resistance on random series-parallel graphs"
+type: software
+version: 1.0.0
+date-released: 2026-08-29
+authors:
+  - family-names: Ding
+    given-names: Ruiqi
+  - family-names: He
+    given-names: Zehua
+  - family-names: Liang
+    given-names: Yutao
+  - family-names: Zheng
+    given-names: Yushu
+repository-code: "https://github.com/iyalice/Series-Parallel"
+license: Apache-2.0
+keywords:
+  - Lean 4
+  - formalization
+  - series-parallel graph
+  - graph distance
+  - effective resistance

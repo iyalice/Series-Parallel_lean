@@ -1,17 +1,8 @@
-# Canonical manuscript–Lean source map
+# Main-text manuscript–Lean source map
 
-Authoritative manuscript: `Distance_and_resistance_SPA_revised_blue.tex`. The table is generated from active TeX after comments
-and literal `\iffalse` branches are removed. Physical label lines are preserved exactly. The
-`\appendix` boundary is line 2472. The census is **136 unique labels =
-98 main + 38 appendix**.
-
-`proved` means that the named Lean declaration is present in the checked project. A trust entry
-names any project axiom inherited by the relevant path; `internal/mathlib` means that no project
-axiom is asserted for that row. `partial (theorem-path bound proved)` is used only where the Lean
-development proves the bound consumed by the main theorem but does not export the complete
-standalone display as one declaration. Documentation-only rows make no formalization claim.
-For theorem-like rows, the trust entry is the exact direct `#print axioms` fingerprint, with
-`standard` abbreviating `propext`, `Classical.choice`, and `Quot.sound`.
+Authoritative manuscript: `Distance_and_resistance_SPA_revised_blue.tex`. This is the exact main-text subset of
+[`SOURCE_MAP.md`](SOURCE_MAP.md), ending before `\appendix`. It contains **98**
+active labels in physical TeX order.
 
 | TeX label | Label line / TeX owner | Kind | Implementation owner | Lean declaration | Module | Status | Trust boundary |
 |---|---:|---|---|---|---|---|---|
@@ -113,41 +104,3 @@ For theorem-like rows, the trust entry is the exact direct `#print axioms` finge
 | `eq:hard-edge-extended-consistency` | 2302 / main | equation | main | `weightedIntegral_difference_bound` | `MainText.WeightedConsistency` | proved | internal/mathlib; MI01-transitive after profile instantiation |
 | `eq:boundary-layer-positive-mass` | 2399 / main | equation | main | `hard_edge_transition_Iplus_lower` | `MainText.HardEdgeConsistency` | proved | internal/mathlib; MI01-transitive after profile instantiation |
 | `rem:two-thirds-heuristic` | 2447 / main | remark | manuscript | — | — | doc-only | doc-only |
-| `app:ode` | 2474 / appendix | section | manuscript | — | — | doc-only | doc-only |
-| `eq:W-ode` | 2479 / appendix | equation | appendix | `wODEValue; SatisfiesWODEAt` | `Appendix.BasicDefs` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:W-boundary` | 2485 / appendix | equation | appendix | `SatisfiesWBoundary; IsWBoundarySolution` | `Appendix.BasicDefs` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:y-ODE` | 2500 / appendix | equation | appendix | `yRhs; SatisfiesYODEAt` | `Appendix.BasicDefs` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:y-boundary` | 2504 / appendix | equation | appendix | `SatisfiesYBoundary; IsYBoundarySolution` | `Appendix.BasicDefs` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:y-shooting` | 2510 / appendix | equation | appendix | `IsShootingSolution` | `Appendix.BasicDefs` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `lem:cuberoot-comparison` | 2522 / appendix | lemma | appendix | `cuberoot_comparison_source` | `Appendix.CubeRootComparison` | proved | standard |
-| `lem:shooting-properties` | 2554 / appendix | lemma | appendix | `shootingProperties` | `Appendix.Shooting` | proved | standard + MI01_global_peano_on_compact_interval |
-| `eq:y>0` | 2558 / appendix | equation | appendix | `shootingY_pos` | `Appendix.Shooting` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:shooting-strict-order` | 2566 / appendix | equation | appendix | `shootingY_strictAnti` | `Appendix.Shooting` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `prop:Cstar-halfline` | 2661 / appendix | proposition | appendix | `cstarHalfline; existsUnique_boundarySolution_iff_lambdaStar_le; lambdaLower_eq_rpow` | `Appendix.AdmissibleHalfline; Appendix.AdmissibleParameters` | proved | standard + MI01_global_peano_on_compact_interval |
-| `eq:Z-halfline` | 2665 / appendix | equation | appendix | `admissibleSet_eq_Ici_lambdaStar` | `Appendix.AdmissibleHalfline` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:rough-Cstar-bounds` | 2671 / appendix | equation | appendix | `lambdaLower_eq_rpow; lambdaLower_le_lambdaStar; lambdaStar_le_upper` | `Appendix.AdmissibleParameters; Appendix.AdmissibleLowerBound` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:ODE divide W` | 2710 / appendix | equation | appendix | `WSolution_sq_hasDerivAt; WSolution_sq_deriv_le` | `Appendix.AdmissibleLowerBound` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:lambda-integral-W` | 2729 / appendix | equation | appendix | `WSolution_compact_integral_identity; lambda_eq_integral` | `Appendix.AdmissibleLowerBound` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `prop:subcritical-W` | 2761 / appendix | proposition | appendix | `subcriticalW` | `Appendix.SubcriticalW` | proved | standard + MI01_global_peano_on_compact_interval |
-| `eq:subcritical-positive-W` | 2768 / appendix | equation | appendix | `WSolution_zero_pos_of_lt_lambdaStar; WSolution_pos_Ico_of_lt_lambdaStar` | `Appendix.SubcriticalW` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `lem:linear-u1` | 2812 / appendix | lemma | appendix | `linearAtOne; WSolution_linearAtOne` | `Appendix.EndpointAsymptotics` | proved | standard + MI01_global_peano_on_compact_interval |
-| `lem:u0-dichotomy` | 2860 / appendix | lemma | appendix | `leftEndpointDichotomy_source` | `Appendix.LeftEndpointDichotomy` | proved | standard + MI01_global_peano_on_compact_interval |
-| `eq:u0-linear` | 2865 / appendix | equation | appendix | `HasLinearBranchAtZero` | `Appendix.BasicDefs` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:u0-sharp` | 2868 / appendix | equation | appendix | `HasSharpBranchAtZero` | `Appendix.BasicDefs` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:r-inverse` | 2904 / appendix | equation | appendix | `LeftLocalInverseData; leftEndpoint_sourceLocalInverse` | `Appendix.LeftEndpointDichotomy` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:r-limsup` | 2916 / appendix | equation | appendix | `localInverse_ratio_eventually_lt_lambda_add` | `Appendix.LeftEndpointDichotomy` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:r-flow` | 2923 / appendix | equation | appendix | `logRatioFlowRhs; logRatioFlow_derivative_identity` | `Appendix.LeftEndpointDichotomy` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `prop:critical-branches` | 2980 / appendix | proposition | appendix | `criticalBranches` | `Appendix.CriticalBranches` | proved | standard + MI01_global_peano_on_compact_interval |
-| `eq:critical-sharp-branch` | 2985 / appendix | equation | appendix | `lambdaStar_not_linearBranch; criticalBranches_of_dichotomy` | `Appendix.CriticalBranches` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:supercritical-linear-branch` | 2991 / appendix | equation | appendix | `supercritical_linear_of_dichotomy` | `Appendix.CriticalBranches` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `app:regularity` | 3048 / appendix | section | manuscript | — | — | doc-only | doc-only |
-| `lem:finite-asymptotic-ode` | 3059 / appendix | lemma | appendix | `finiteAsymptoticODE_source` | `Appendix.FiniteAsymptoticODE` | proved | standard |
-| `eq:asymptotically-autonomous-ode` | 3074 / appendix | equation | appendix | `IsAsymptoticallyAutonomousSolutionSource; asymptoticallyAutonomousRhs` | `Appendix.FiniteAsymptoticODE` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:finite-asymptotic-expansion` | 3086 / appendix | equation | appendix | `FiniteAsymptoticExpansion; finiteAsymptoticRemainder` | `Appendix.FiniteAsymptoticODE` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:D8-bound` | 3122 / appendix | equation | appendix | `recursive_defect8_isBigO; reciprocalDefect8_deriv_isBigO` | `Appendix.FiniteAsymptoticODE` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:R-linear-equation` | 3130 / appendix | equation | appendix | `remainder_linear_equation; eventually_remainder_linear_equation` | `Appendix.FiniteAsymptoticODE` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:terminal-integral` | 3176 / appendix | equation | appendix | `terminal_integral_formula` | `Appendix.FiniteAsymptoticODE` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `lem:linear-branch-regularity` | 3204 / appendix | lemma | appendix | `leftLinearBranchRegularity_source; rightLinearBranchRegularity_source; linearBranchRegularity_source` | `Appendix.LinearBranchRegularity` | proved | standard |
-| `eq:W-expansion-zero-differentiable` | 3224 / appendix | equation | appendix | `LeftLinearBranchRegularity.differentiableExpansion; leftEndpointDifferentiableExpansion_exactQuadratic` | `Appendix.LinearBranchRegularity` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:W-expansion-one-differentiable` | 3248 / appendix | equation | appendix | `RightLinearBranchRegularity.differentiableExpansion; rightEndpointDifferentiableExpansion_exactQuadratic` | `Appendix.LinearBranchRegularity` | proved | internal/mathlib; MI01-transitive after profile instantiation |
-| `eq:W-relative-derivative-bounds` | 3258 / appendix | equation | appendix | `RelativeDerivativeBoundsAtZero; RelativeDerivativeBoundsAtOne` | `Appendix.LinearBranchRegularity` | proved | internal/mathlib; MI01-transitive after profile instantiation |
