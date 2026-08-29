@@ -1,12 +1,12 @@
 # Canonical statement inventory
 
-The authoritative TeX contains **156 active unique labels**:
+The authoritative TeX contains **136 active unique labels**:
 
 | Region | Metadata | Statement environments | Formula labels | Total |
 |---|---:|---:|---:|---:|
-| main | 14 | 20 | 78 | 112 |
-| appendix | 2 | 9 | 33 | 44 |
-| total | 16 | 29 | 111 | 156 |
+| main | 14 | 20 | 64 | 98 |
+| appendix | 2 | 9 | 27 | 38 |
+| total | 16 | 29 | 91 | 136 |
 
 ## Main text
 
@@ -24,14 +24,14 @@ The 20 statement environments comprise 3 theorems, 12 lemmas, and 5 propositions
   marked partial only because the exported theorem gives the bound consumed by the global
   barrier without separately packaging every displayed two-sided clause.
 
-Among the 78 main formula labels, 74 are closed, 1 literature-citation display is outside the
-three-theorem formalization scope, and 3 retain the same non-blocking standalone-wrapper
+Among the 64 main formula labels, 61 are closed, 1 literature-citation display is outside the
+three-theorem formalization scope, and 2 retain a non-blocking standalone-wrapper
 qualification. The exact per-label status, module, declaration, and trust class are in
 `SOURCE_MAP.md`.
 
 ## Appendix
 
-All 9 appendix result environments (A1–A7 and B1–B2) and their 33 formula labels are compiled.
-The 11 profile labels moved by the current TeX remain `TeX owner = main` and
+All 9 appendix result environments (A1–A7 and B1–B2) and their 27 formula labels are compiled.
+The 11 profile labels owned by the main text remain `TeX owner = main` and
 `implementation owner = appendix/façade`; they are counted once. Hard-edge profile uniqueness
 is `EqOn` on `Set.Ici 0`, not an unjustified whole-line equality.

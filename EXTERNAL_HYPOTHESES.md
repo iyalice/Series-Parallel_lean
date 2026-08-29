@@ -7,12 +7,15 @@ preferred throughout; E-a was not triggered.
 
 1. `SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval`
    is a generic Peano existence statement for a continuous scalar field on a compact time
-   interval with linear growth. Appendix shooting/profile existence consumes it. Only
-   `resistanceSpeedNearCritical` inherits it.
+   interval with linear growth. Appendix shooting/profile existence consumes it. The closed
+   scalar theorem `resistanceSpeedNearCritical` and its graph-facing counterpart
+   `GraphSemantics.graphResistanceSpeedNearCritical` inherit it.
 
 2. `SeriesParallel.MainText.distanceGamma_half_eq_zero : gammaD (1 / 2) = 0`
-   is the sole new literature input needed by the first two main theorems. Parameter monotonicity,
-   a.s./L1 convergence, critical resistance, and all other ranges are internal consequences.
+   is the sole literature input needed by `logarithmicSpeeds` and
+   `firstMomentLogarithmicRates`; the corresponding graph-facing wrappers inherit the same
+   fingerprint. Parameter monotonicity, a.s./L1 convergence, critical resistance, and all other
+   ranges are internal consequences.
 
 ## Out-of-scope literature statements
 
