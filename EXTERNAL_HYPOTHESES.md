@@ -1,28 +1,47 @@
-# External hypotheses
+# External mathematical hypotheses
 
-The external trust budget is **2 facts**, below the allowed maximum of 6. Fewer interfaces were
-preferred throughout; E-a was not triggered.
+The formalization uses exactly the following two external facts.
 
-## Core interfaces
+## 1. Critical distance first-moment rate
 
-1. `SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval`
-   is a generic Peano existence statement for a continuous scalar field on a compact time
-   interval with linear growth. Appendix shooting/profile existence consumes it. The closed
-   scalar theorem `resistanceSpeedNearCritical` and its graph-facing counterpart
-   `GraphSemantics.graphResistanceSpeedNearCritical` inherit it.
+Let
+$$
+\gamma_D(p)=\lim_{n\to\infty}\frac1n\log\mathbb E[D_n(p)].
+$$
+The admitted value is
+$$
+\boxed{\gamma_D\!\left(\frac12\right)=0.}
+$$
+Equivalently,
+$$
+\lim_{n\to\infty}\frac1n
+\log\mathbb E\!\left[D_n\!\left(\frac12\right)\right]=0.
+$$
+The existence of the limit is proved internally; the external input supplies only its value at
+$p=1/2$. In Lean this is
+`SeriesParallel.MainText.distanceGamma_half_eq_zero`. It is used only in Theorems 1.1 and 1.2.
 
-2. `SeriesParallel.MainText.distanceGamma_half_eq_zero : gammaD (1 / 2) = 0`
-   is the sole literature input needed by `logarithmicSpeeds` and
-   `firstMomentLogarithmicRates`; the corresponding graph-facing wrappers inherit the same
-   fingerprint. Parameter monotonicity, a.s./L1 convergence, critical resistance, and all other
-   ranges are internal consequences.
+## 2. Peano existence on a compact interval
 
-## Out-of-scope literature statements
+Let $t_0<T$, $y_0\in\mathbb R$, and let
+$$
+F:[t_0,T]\times\mathbb R\longrightarrow\mathbb R
+$$
+be continuous. Suppose that $A,B\geq0$ and
+$$
+|F(t,y)|\leq A+B|y|
+\qquad (t\in[t_0,T],\ y\in\mathbb R).
+$$
+Then there exists a function $y:\mathbb R\to\mathbb R$ such that
+$$
+y(t_0)=y_0,\qquad y|_{[t_0,T]}\in C([t_0,T]),
+$$
+and
+$$
+y'(t)=F(t,y(t))\qquad(t_0<t<T).
+$$
+No assertion is made about $y$ outside $[t_0,T]$. In Lean this is
+`SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval`. It is used only in
+Theorem 1.3.
 
-The distance near-critical comparison is not needed for the three requested main theorems. It is
-therefore not encoded as a Lean declaration and contributes no project axiom. Its TeX label
-remains in `SOURCE_MAP.md` solely as an out-of-scope source citation. The current SPA manuscript
-no longer contains the former critical-resistance distributional-limit display.
-
-`ExternalInterfaces.lean` remains an empty historical compatibility boundary. The active core
-literature interface is `LiteratureInterfaces.lean`.
+No other external mathematical hypothesis occurs in the proof of the three main theorems.

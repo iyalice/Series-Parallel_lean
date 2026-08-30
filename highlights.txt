@@ -1,5 +1,0 @@
-Distance and resistance have deterministic almost-sure logarithmic speeds.
-First-moment and almost-sure distance rates agree for every parameter.
-Resistance rates agree with first moments throughout the supercritical regime.
-The resistance speed vanishes with exponent 2/3 near criticality.
-A Lean 4 development records the proof graph and external assumptions.

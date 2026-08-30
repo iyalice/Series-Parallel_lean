@@ -1,27 +1,13 @@
 \PassOptionsToPackage{hypertexnames=false}{hyperref}
-\documentclass[a4paper,fleqn]{cas-sc}
+\documentclass[12pt,preprint]{amsart}
 
 \usepackage[numbers,sort&compress]{natbib}
-\usepackage{amsthm,mathtools}
+\usepackage{amssymb,mathtools}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
 \usepackage{microtype}
 \usepackage{xcolor}
-
-\newif\ifshowrevisions
-\showrevisionstrue
-\DeclareRobustCommand{\rev}[1]{{\ifshowrevisions\color{blue}\fi#1}}
-\newenvironment{revision}{\begingroup\ifshowrevisions\color{blue}\fi}{\endgroup}
-\makeatletter
-\expandafter\def\csname revequation\endcsname{%
-  \csname equation*\endcsname\ifshowrevisions\color{blue}\fi}
-\expandafter\let\csname endrevequation\expandafter\endcsname
-  \csname endequation*\endcsname
-\expandafter\def\csname revalign\endcsname{%
-  \csname align*\endcsname\ifshowrevisions\color{blue}\fi}
-\expandafter\let\csname endrevalign\expandafter\endcsname
-  \csname endalign*\endcsname
-\makeatother
+\usepackage{hyperref}
 
 \hypersetup{
   colorlinks=true,
@@ -51,60 +37,52 @@
 \newcommand{\stle}{\le_{\mathrm{st}}}
 
 \begin{document}
-\let\printorcid\relax
-\let\WriteBookmarks\relax
-\shorttitle{Distance and resistance on random series--parallel graphs}
-\shortauthors{Ding et~al.}
-
-\title[mode=title]{Distance and resistance on random series--parallel graphs:
+%
+%
+\title[Distance and resistance on random series--parallel graphs]{Distance and resistance on random series--parallel graphs:
 logarithmic speeds and near-critical asymptotics}
 
-\author[1,2]{Ruiqi Ding}
-\ead{dingruiqi@amss.ac.cn}
-% \credit{Conceptualization, Methodology, Formal analysis,
-% Writing -- original draft, Writing -- review and editing}
+\author[Ding et~al.]{Ruiqi Ding}
+\author[]{Zehua He}
+\author[]{Yutao Liang}
+\author[]{Yushu Zheng}
+\thanks{Corresponding author: Zehua He.}
 
-\author[1,2]{Zehua He}
-\cormark[1]
-\ead{hezehua@amss.ac.cn}
-% \credit{Conceptualization, Methodology, Formal analysis,
-% Software, Writing -- original draft, Writing -- review and editing}
+\address[Ruiqi Ding, Zehua He, and Yutao Liang]{
+State Key Laboratory of Mathematical Sciences, Academy of Mathematics and
+Systems Science, Chinese Academy of Sciences, Beijing 100190, China}
+\address[Ruiqi Ding, Zehua He, and Yutao Liang]{
+School of Mathematical Sciences, University of Chinese Academy of Sciences,
+Beijing 100049, China}
+\address[Yushu Zheng]{
+School of Mathematics, Shanghai University of Finance and Economics,
+Shanghai 200433, China}
 
-\author[1,2]{Yutao Liang}
-\ead{liangyutao@amss.ac.cn}
-% \credit{Conceptualization, Methodology, Formal analysis,
-% Writing -- review and editing}
+\email[Ruiqi Ding]{dingruiqi@amss.ac.cn}
+\email[Zehua He]{hezehua@amss.ac.cn}
+\email[Yutao Liang]{liangyutao@amss.ac.cn}
+\email[Yushu Zheng]{yszheng666@gmail.com}
 
-\author[3]{Yushu Zheng}
-\ead{yszheng666@gmail.com}
-% \credit{Conceptualization, Methodology, Formal analysis,
-% Writing -- review and editing}
-
-\affiliation[1]{
-  organization={State Key Laboratory of Mathematical Sciences, Academy of Mathematics and Systems Science, Chinese Academy of Sciences},
-  addressline={No.~55 Zhongguancun East Road, Haidian District},
-  city={Beijing},
-  postcode={100190},
-  country={China}
-}
-
-\affiliation[2]{
-  organization={School of Mathematical Sciences, University of Chinese Academy of Sciences},
-  addressline={No.~19A Yuquan Road, Shijingshan District},
-  city={Beijing},
-  postcode={100049},
-  country={China}
-}
-
-\affiliation[3]{
-  organization={School of Mathematics, Shanghai University of Finance and Economics},
-  addressline={No.~777 Guoding Road, Yangpu District},
-  city={Shanghai},
-  postcode={200433},
-  country={China}
-}
-
-\cortext[1]{Corresponding author}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 
 \begin{abstract}
 We study the graph distance $D_n(p)$ and effective resistance
@@ -122,20 +100,18 @@ $v_R(\frac12+\delta)\sim
 2\zeta(3)^{1/3}\lambda_*\delta^{2/3}$ as $\delta\downarrow0$, where
 $\lambda_*>0$ is characterized by an explicit nonlinear boundary-value
 problem. This exponent $2/3$ contrasts with the exponent $1/2$ for distance
-obtained by Chen, Derrida, Duquesne, and Shi (2026). \rev{A companion Lean~4
-development formalizes the three principal theorems and their proof graph,
-subject to two explicitly documented external mathematical assumptions.}
+obtained by Chen, Derrida, Duquesne, and Shi (2026).
+%
 \end{abstract}
 
-
-\begin{keywords}
-random series--parallel graph
-\sep graph distance
-\sep effective resistance
-\sep logarithmic speeds
-\sep near-critical asymptotics
-
-\end{keywords}
+\keywords{Random series--parallel graph;
+graph distance;
+effective resistance;
+logarithmic speeds;
+near-critical asymptotics}
+%
+%
+%
 \maketitle
 \hypersetup{
   pdftitle={Distance and resistance on random series--parallel graphs:
@@ -254,7 +230,7 @@ $\mathcal G_{k+1}(p)$.  Figure~\ref{fig:series-parallel-replacement}
 illustrates the first two refinement steps for one realization of the
 environment.
 
-\begin{figure}[pos=h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}[
   line width=0.7pt,
@@ -320,11 +296,11 @@ $v_R(p)$ such that
  \label{eq:full-range-L1}
 \end{equation}
 Their values satisfy
-\begin{revequation}
+\begin{equation*}
  v_D(p)=0\quad\text{for }0\le p\le\frac12,
  \qquad
  v_R(1-p)=-v_R(p)\quad\text{for }0\le p\le1,
-\end{revequation}
+\end{equation*}
 so in particular $v_R(1/2)=0$.  Moreover, for $1/2<p\le1$,
 \begin{equation}
  v_D(p),\,v_R(p)\in[\log(2p),\log2].
@@ -335,11 +311,11 @@ so in particular $v_R(1/2)=0$.  Moreover, for $1/2<p\le1$,
 \begin{theorem}[First-moment logarithmic rates]
 \label{thm:first-moment-logarithmic-rates}
 For every $p\in[0,1]$, the limits
-\begin{revequation}
+\begin{equation*}
  \gamma_D(p):=\lim_{n\to\infty}\frac1n\log\E D_n(p),
  \qquad
  \gamma_R(p):=\lim_{n\to\infty}\frac1n\log\E R_n(p)
-\end{revequation}
+\end{equation*}
 exist.  With the convention $\log0=-\infty$, they are related to the
 logarithmic speeds by
 \begin{equation}\label{eq:resistance-first-moment-dichotomy}
@@ -358,7 +334,7 @@ In particular,
 Figure~\ref{fig:resistance-speed-comparison} schematically illustrates
 the maximum in \eqref{eq:resistance-first-moment-dichotomy}.
 
-\begin{figure}[pos=h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}[
   scale=0.7,
@@ -422,8 +398,7 @@ sufficiently close to $1/2$, Theorem~\ref{thm:near-critical-speed} gives
 $\log(2p)>v_R(p)$, so the maximum is $\log(2p)$.  No claim is made
 about the global curvature of $v_R$ or the number
 or locations of crossings between $v_R(p)$ and $\log(2p)$ in
-$0<p<1/2$. \rev{The plotted global continuation is arbitrary and is not
-computed data.}}
+$0<p<1/2$. }
 \label{fig:resistance-speed-comparison}
 \end{figure}
 
@@ -465,12 +440,12 @@ that the first-moment logarithmic rate for distance exists and obtained its
 sharp
 near-critical asymptotics.  Together with
 Theorem~\ref{thm:first-moment-logarithmic-rates}, their results give
-\begin{revequation}
+\begin{equation*}
  v_D\left(\frac12+\delta\right)=\gamma_D\left(\frac12+\delta\right)
  \sim \sqrt{\zeta(2)}\,\delta^{1/2}
  =\frac{\pi}{\sqrt6}\,\delta^{1/2}
  \qquad\text{as }\delta\downarrow0.
-\end{revequation}
+\end{equation*}
 Thus the distance and resistance speeds vanish with different critical
 exponents $1/2$ and $2/3$, respectively.  Remark~\ref{rem:two-thirds-heuristic}
 explains heuristically why the resistance exponent is $2/3$.
@@ -512,22 +487,22 @@ with the logarithmic speeds.
 The fluctuation control in Lemma~\ref{lem:center-tracking} upgrades convergence of the mean logarithms
 to the almost-sure and $L^1$ convergence in \eqref{eq:full-range-L1}.
 
-\rev{To prove Theorem~\ref{thm:near-critical-speed}, we construct two families of random variables that yield upper and lower bounds for $\log R_n(\frac12+\delta)$. Consider the upper bound, for example. Let $\mathcal T_{\frac12+\delta}$ denote the one-step CDF
-update of $\log R_n(\frac12+\delta)$ (see Section~\ref{sec:cdf-operator}), and write $\delta=\varepsilon^3$.} For any
+To prove Theorem~\ref{thm:near-critical-speed}, we construct two families of random variables that yield upper and lower bounds for $\log R_n(\frac12+\delta)$. Consider the upper bound, for example. Let $\mathcal T_{\frac12+\delta}$ denote the one-step CDF
+update of $\log R_n(\frac12+\delta)$ (see Section~\ref{sec:cdf-operator}), and write $\delta=\varepsilon^3$. For any
 \(\lambda>\lambda_*\) and
 \(\kappa>\kappa_\lambda:=2\zeta(3)^{1/3}\lambda\), and all sufficiently
-small \(\varepsilon\), we construct \rev{a} random variable
-\(Y_\varepsilon\) with CDF \(G_\varepsilon\)\rev{ such that}
+small \(\varepsilon\), we construct a random variable
+\(Y_\varepsilon\) with CDF \(G_\varepsilon\) such that
 \begin{align}\label{prop_G}
  F_0\ge G_\varepsilon,
  \qquad
  \mathcal T_{1/2+\varepsilon^3}G_\varepsilon(x)
  \ge G_\varepsilon(x-\kappa\varepsilon^2).
 \end{align}
-\rev{Here $F_0(x)=\mathbf 1_{\{x\ge0\}}$ is the CDF of $\log R_0(\frac12+\varepsilon^3)$. The first inequality in \eqref{prop_G} gives $\log R_0(\frac12+\varepsilon^3)
+Here $F_0(x)=\mathbf 1_{\{x\ge0\}}$ is the CDF of $\log R_0(\frac12+\varepsilon^3)$. The first inequality in \eqref{prop_G} gives $\log R_0(\frac12+\varepsilon^3)
  \stle Y_\varepsilon$. Then the second inequality in \eqref{prop_G}, combined with the basic properties of random series--parallel graphs (see Lemma~\ref{lem:exact-cdf}), gives
   $\log R_n(\frac12+\varepsilon^3)
- \stle Y_\varepsilon+n\kappa\varepsilon^2$, and hence}
+ \stle Y_\varepsilon+n\kappa\varepsilon^2$, and hence
 \(v_R(1/2+\varepsilon^3)\le\kappa\varepsilon^2\).
 Letting \(\kappa\downarrow\kappa_\lambda\) and then
 \(\lambda\downarrow\lambda_*\) gives the sharp upper bound. The matching
@@ -536,7 +511,7 @@ lower bound follows from the same reasoning.
 To construct \(G_\varepsilon\) satisfying \eqref{prop_G}, we compare the  one-step change
 \(\mathcal T_{1/2+\delta}G_\varepsilon(x)-G_\varepsilon(x)\) with the change
 \(G_\varepsilon(x-\kappa\varepsilon^2)-G_\varepsilon(x)\) caused by translation.
- \rev{Matching their leading-order coefficients yields the}
+ Matching their leading-order coefficients yields the
 equation in Theorem~\ref{thm:near-critical-speed}:
 \[
  W^2W'-\lambda W+u(1-u)=0.
@@ -548,7 +523,7 @@ ensures the existence of its solution, thus ensuring the existence of $G_\vareps
 
 \begin{remark}
     The differential equation in Theorem~\ref{thm:near-critical-speed} comes
-\rev{directly from the above comparison between the CDF update and the translation.} Test the operator on a slowly varying CDF
+directly from the above comparison between the CDF update and the translation. Test the operator on a slowly varying CDF
 $F_{\varepsilon,z_0}(x)=\Phi(z_0+\varepsilon x)$, with
 $q=\Phi'$.  Lemma~\ref{lem:exact-cdf} and
 Lemma~\ref{lem:weighted-consistency} give, for all $x$ and $z_0$,
@@ -626,28 +601,6 @@ means that their ratio is bounded above and below by positive constants in
 the stated regime.  Unless stated otherwise, $c$ and $C$ denote finite
 positive constants whose values may change from line to line.
 
-\begin{revision}
-\subsection*{AI-assisted formalization methodology}
-During August 2026, the authors used OpenAI ChatGPT with the GPT-5.6 model
-identified in the project record and OpenAI Codex with a GPT-5-family model
-(the client did not expose a more specific deployment identifier). The tools
-assisted with initial proof sketches, Lean declaration and proof drafts,
-mathlib search, consistency checks, language editing, and suggestions for the
-manuscript--formalization crosswalk. They did not serve as authors or as
-sources of mathematical authority.
-
-The human authors specified the mathematical and graph-semantic contracts,
-reconstructed and checked the arguments, verified literature claims against
-primary sources, reviewed the generated Lean source, and accepted or rejected
-each substantive change. Reproducibility checks use Lean~4.32.1 and mathlib
-revision \texttt{520045ab14e26149ee970e2e617ca04b09bde5d6}; they include
-filewise kernel checking, a clean \texttt{lake build}, proof-escape and
-placeholder scans, and \texttt{\#print axioms} fingerprints. The frozen
-artifact records the specifications, crosswalk, build instructions, audit
-reports, and two explicit external mathematical interfaces forming the trust
-boundary. Archive identifiers are given in the Code availability section.
-\end{revision}
-
 \section{Preliminaries}
 \label{sec:preliminaries}
 
@@ -675,12 +628,12 @@ To treat distance and resistance simultaneously, set
 \]
 For $\eta\in\{0,1\}$ and $x,y>0$, define the corresponding
 parallel operation by
-\begin{revequation}
+\begin{equation*}
 \Pi_\eta(x,y)
  :=
  \frac{x\wedge y}
  {\left(1+\dfrac{x\wedge y}{x\vee y}\right)^\eta}.
-\end{revequation}
+\end{equation*}
 Thus $\Pi_0(x,y)=x\wedge y$ and
 $\Pi_1(x,y)=xy/(x+y)$.
 Decomposing the environment tree at its root then yields the marginal
@@ -905,8 +858,8 @@ CDF of $X_{n+1}(p)$.
 We now give an explicit formula for this update when $F$ is absolutely
 continuous.  Let $\rho$ be the density of $F$, and recall that
 $h(r)=\log(1+e^{-r})$ for $r\ge0$.
-Define
-\begin{revalign}
+Define \[
+\begin{aligned}
 I_-(F;x)
  &:=\int_0^\infty\int_0^{h(r)}
    \rho(x-s)\rho(x-s-r)\,\dd s\,\dd r,
@@ -914,7 +867,7 @@ I_-(F;x)
  I_+(F;x)
  &:=\int_0^\infty\int_0^{h(r)}
    \rho(x+s)\rho(x+s+r)\,\dd s\,\dd r.
-\end{revalign}
+\end{aligned} \]
 
 \begin{lemma}
 \label{lem:exact-cdf}
@@ -981,7 +934,7 @@ $s<h(r)$.  Therefore
  &=I_-(F;x).
 \end{aligned}
 \]
-\rev{This} proves the formula for $S_F$.
+This proves the formula for $S_F$.
 
 The formula for $P_F$ follows by the same argument, using
 \eqref{eq:log-series-gate}.  This proves
@@ -1238,11 +1191,11 @@ We begin by bounding the second-moment ratio.  Set
 \begin{lemma}
 \label{lem:normalized-L2}
 For $p>1/2$,
-\begin{revequation}
+\begin{equation*}
 \sup_{n\ge0}K_n
  \le K
  :=\frac{2p+(1-p)4^{-\eta}}{2p(2p-1)}.
-\end{revequation}
+\end{equation*}
 \end{lemma}
 
 \begin{proof}
@@ -1451,14 +1404,15 @@ Recall that \(h(r)=\log(1+e^{-r})\) for \(r\ge0\).
 \label{lem:diffusion-coefficient}
 The following equality holds:
 \begin{equation*}
-\rev{\int_0^\infty\bigl(h(r)^2+rh(r)\bigr)\,\dd r=\zeta(3).}
+\int_0^\infty\bigl(h(r)^2+rh(r)\bigr)\,\dd r=\zeta(3).
 \end{equation*}
 
 \end{lemma}
+
 \begin{proof}
+
 With $u=(1+e^r)^{-1}$, symmetry under $u\mapsto1-u$ gives
 \[
-\begin{revision}
 \begin{aligned}
 \int_0^\infty\bigl(h(r)^2+rh(r)\bigr)\,\dd r
  &=\int_0^{1/2}
@@ -1469,7 +1423,6 @@ With $u=(1+e^r)^{-1}$, symmetry under $u\mapsto1-u$ gives
  =\sum_{n\ge1}\frac1{n^3}
  =\zeta(3),
 \end{aligned}
-\end{revision}
 \]
 where the first line also uses
 $1/[u(1-u)]=1/u+1/(1-u)$, and the second follows from
@@ -1692,11 +1645,8 @@ and $\varepsilon>0$, set
 
 The following lemma gives the
 required estimates for $\Phi$.
-
-
 \begin{lemma}
 \label{lem:weighted-consistency}
-
 There are constants $C_\lambda<\infty$ and $\varepsilon_\lambda>0$
 such that, for all $x,z_0\in\mathbb R$ and
 $0<\varepsilon<\varepsilon_\lambda$,
@@ -1714,19 +1664,19 @@ $0<\varepsilon<\varepsilon_\lambda$,
 Combining Lemmas~\ref{lem:exact-cdf} and
 \ref{lem:weighted-consistency} with
 \eqref{eq:upper-profile-equation} gives
-\begin{revequation}
+\begin{equation*}
  \mathcal T_{p_+}F_{\varepsilon,z_0}(x)
  -F_{\varepsilon,z_0}(x)
  =-\kappa_{\lambda}\varepsilon^3q(\xi)
   +O_{\lambda}(\varepsilon^5q(\xi)),
-\end{revequation}
+\end{equation*}
 for all $x,z_0\in\R$.  Taylor expansion gives
-\begin{revequation}
+\begin{equation*}
  F_{\varepsilon,z_0}(x-\kappa\varepsilon^2)
  -F_{\varepsilon,z_0}(x)
  =-\kappa\varepsilon^3q(\xi)
   +O_{\lambda,\kappa}(\varepsilon^6q(\xi)).
-\end{revequation}
+\end{equation*}
 Hence, for all sufficiently small $\varepsilon$ and all
 $x,z_0\in\mathbb R$,
 \begin{equation}
@@ -1736,30 +1686,29 @@ $x,z_0\in\mathbb R$,
  \label{eq:strict-untruncated-upper}
 \end{equation}
 
-
-Thus $F_{\varepsilon,z_0}$ satisfies the required \rev{inequality} \eqref{upp_barrier_ineq}, with a
+Thus $F_{\varepsilon,z_0}$ satisfies the required inequality \eqref{upp_barrier_ineq}, with a
 strict margin.  However, it does not satisfy \eqref{upp_barrier_init}, since
 $F_{\varepsilon,z_0}(x)>0=F_0(x)$ for $x<0$.
 
 \paragraph*{Step 2: Use truncation to construct $G_\varepsilon$}
 Set
-\begin{revequation}
+\begin{equation*}
  \alpha_\varepsilon=\varepsilon^4,
  \qquad
  \Phi(z_\varepsilon)=\alpha_\varepsilon,
  \qquad
  F_\varepsilon(x)=\Phi(z_\varepsilon+\varepsilon x).
-\end{revequation}
+\end{equation*}
 Let $\widetilde Y_\varepsilon$ have CDF $F_\varepsilon$, put $Y_\varepsilon=\widetilde Y_\varepsilon\vee0$, and denote its
 CDF by
-\begin{revequation}
+\begin{equation*}
  G_\varepsilon(x)=
  \begin{cases}
  0,&x<0,\\
  F_\varepsilon(x),&x\ge0,
  \end{cases}
  \qquad G_\varepsilon(0)=\alpha_\varepsilon.
-\end{revequation}
+\end{equation*}
 Then $F_0\ge G_\varepsilon$.  The truncation error is controlled by the
 following lemma.
 
@@ -1800,11 +1749,11 @@ For $x<\kappa\varepsilon^2$,
 $G_\varepsilon(x-\kappa\varepsilon^2)=0$, while
 $\mathcal T_{p_+}G_\varepsilon(x)\ge0$ because it is a CDF.  Thus the two
 cases give the global inequality
-\begin{revequation}
+\begin{equation*}
  \mathcal T_{p_+}G_\varepsilon(x)
  \ge G_\varepsilon(x-\kappa\varepsilon^2),
  \qquad x\in\mathbb R.
-\end{revequation}
+\end{equation*}
 Moreover, Proposition~\ref{prop:full-line-distribution} implies that the law
 with CDF $\Phi$ has a finite absolute first moment.  Hence $\widetilde Y_\varepsilon$, and therefore
 $Y_\varepsilon$, is integrable.  Thus $G_\varepsilon$ has the two properties
@@ -1841,7 +1790,7 @@ where
  \sup_{|t|\le\varepsilon}|Q_{s,r}'''(t)|.
 \]
 
-To bound the remainder, we first derive two estimates on $q$. \rev{Write} $M:=M_\lambda$, and let $C_\lambda$ denote constants that may change from line to line. Since $q>0$, the case $j=1$ in
+To bound the remainder, we first derive two estimates on $q$. Write $M:=M_\lambda$, and let $C_\lambda$ denote constants that may change from line to line. Since $q>0$, the case $j=1$ in
 \eqref{eq:full-line-relative-bounds} gives
 \begin{equation}
  e^{-M|y|}q(z)\le q(z+y)\le e^{M|y|}q(z),
@@ -1940,7 +1889,7 @@ $\{g_-(\widetilde Z_1,\widetilde Z_2)\le x\}$ coincide for $x\ge0$, and hence
  P_{F_\varepsilon}(x)=P_{G_\varepsilon}(x).
 \]
 
-For the \rev{series-composition} map, coordinatewise monotonicity gives
+For the series-composition map, coordinatewise monotonicity gives
 \(
  g_+(Z_1,Z_2)
  \le g_+(\widetilde Z_1,\widetilde Z_2).
@@ -1966,7 +1915,7 @@ $0\le Z_2\le x$.  If $x\ge\log2$, the additional inequality
  x<g_+(0,Z_2)=\log(1+e^{Z_2})
 \]
 is equivalent to $\log(e^x-1)<Z_2$.  Define
-\begin{revequation}
+\begin{equation*}
 \begin{aligned}
  d(0)&=0,\\
  d(x)&=
@@ -1976,18 +1925,18 @@ is equivalent to $\log(e^x-1)<Z_2$.  Define
  \end{cases}\\
  0&\le d(x)\le\log2.
 \end{aligned}
-\end{revequation}
+\end{equation*}
 Indeed, for $x\ge\log2$ we have
 $\log(e^x-1)=x-d(x)$ and $1-e^{-x}\ge1/2$, which gives
 $d(x)\le\log2$.  Independence and the same argument with the two
 inputs exchanged now yield
-\begin{revequation}
+\begin{equation*}
 \begin{aligned}
  0\le S_{F_\varepsilon}(x)-S_{G_\varepsilon}(x)
  \le \alpha_\varepsilon^2\ind_{\{0\le x<\log2\}}+2\alpha_\varepsilon
  \bigl(F_\varepsilon(x)-F_\varepsilon(x-d(x))\bigr).
 \end{aligned}
-\end{revequation}
+\end{equation*}
 
 Put $\xi=z_\varepsilon+\varepsilon x$.  Since $q>0$,
 \eqref{eq:full-line-relative-bounds} gives
@@ -2015,7 +1964,7 @@ small $\varepsilon$,
 Thus, for $0\le x\le\log2$, the inequality
 $\alpha_\varepsilon^2\le
 c_\lambda^{-1}\alpha_\varepsilon q(\xi)$ holds.  Using also
-$p_+\le1$, $\varepsilon\le1$, and the equality of the \rev{parallel-composition}
+$p_+\le1$, $\varepsilon\le1$, and the equality of the parallel-composition
 CDFs, we obtain
 \[
 \begin{aligned}
@@ -2132,11 +2081,11 @@ Proposition~\ref{prop:hard-edge-barrier}.
 \label{prop:hard-edge-barrier}
 Fix $0<\lambda<\lambda_*$ and $0<\kappa<\kappa_{\lambda}$.  For all sufficiently small
 $\varepsilon$,
-\begin{revequation}
+\begin{equation*}
  \mathcal T_{p_-}H_\varepsilon(x)
  \ge H_\varepsilon(x+\kappa\varepsilon^2),
  \qquad x\in\mathbb R.
-\end{revequation}
+\end{equation*}
 \end{proposition}
 
 Proposition~\ref{prop:hard-edge-barrier} proves the remaining case, so $H_\varepsilon$ has the two properties used above.
@@ -2246,7 +2195,7 @@ Choose $\varepsilon_\lambda>0$ so that
 $2\overline M\varepsilon_\lambda\le1/2$, and assume henceforth that
 $0<\varepsilon<\varepsilon_\lambda$.  Since
 $0\le s\le h(r)\le\log2<1$, we have $2s+r\le2(1+r)$.  Hence
-\rev{Leibniz's rule},
+Leibniz's rule,
 \eqref{eq:q-extension-bounds}, and
 \eqref{eq:extension-log-Lipschitz} imply, for all
 $|t|\le\varepsilon$,
@@ -2423,10 +2372,10 @@ the proof.
 The existence, positivity, and minimality of $\lambda_*$ for the
 boundary-value problem \eqref{eq:main-W-bvp} follow from
 Proposition~\ref{prop:Cstar-halfline}.
-  \rev{Combining \eqref{eq:sharp-upper-bound} and
+  Combining \eqref{eq:sharp-upper-bound} and
 \eqref{eq:sharp-lower-bound}, and using
 Lemma~\ref{lem:resistance-duality}, yields
-\eqref{eq:main-near-critical-limit}.}
+\eqref{eq:main-near-critical-limit}.
 For the first-moment assertions, Theorem~\ref{thm:first-moment-logarithmic-rates}
 gives
 $\gamma_R(1/2+\delta)=v_R(1/2+\delta)$.  On the subcritical side, since
@@ -2445,7 +2394,7 @@ Together with \eqref{eq:main-near-critical-limit}, these identities yield
 
 \begin{remark}[Why the exponent $2/3$?]
 \label{rem:two-thirds-heuristic}
-\begin{revision}
+
 The exponent \(2/3\) can be inferred from the orders of the terms in the one-step recursion. To study the scaling of $v_R(\frac12+\delta)=\lim_{n\to\infty}n^{-1}X_n(\frac12+\delta)$ as $\delta\to0$, we compare
 $\mathcal T_{1/2+\delta}F_n^+(\cdot)-F_n^+(\cdot)=F_{n+1}^+(\cdot)-F_n^+(\cdot)$ with the change
 $F_n^+(\cdot-s)-F_n^+(\cdot)$ induced by a translation of size $s$, to be determined. If one can choose $s$, independently of $n$, such that
@@ -2453,7 +2402,7 @@ $F_{n+1}^+(\cdot)-F_n^+(\cdot)\asymp F_n^+(\cdot-s)-F_n^+(\cdot)$, then heuristi
 
 To implement this idea, we seek an auxiliary CDF $K$ satisfying
 $\mathcal T_{1/2+\delta}K(\cdot)-K(\cdot)\asymp K(\cdot-s)-K(\cdot)$ and approximating $F_0^+$. This suggests $F_n^+(\cdot)\asymp K(\cdot-ns)$ and hence $v_R(\frac12+\delta)\asymp s$. The construction is guided by the following heuristic:
-\end{revision}
+
 Let \(K_\eta(x)=K(\eta x)\) be a smooth CDF of width
 \(\eta^{-1}\).  At criticality, the first non-vanishing term in
 \(\mathcal T_{1/2}K_\eta-K_\eta\) is of order \(\eta^3\), whereas the  bias
@@ -2835,7 +2784,7 @@ sufficiently small $\delta>0$ such that
 $\underline y:=\underline w^3$ and
 $\overline y:=\overline w^3$ are a subsolution and a supersolution,
 respectively, of \eqref{eq:y-shooting} on $[0,\delta]$.  All three functions
-have the same initial value \(0\), so \rev{Lemma~\ref{lem:cuberoot-comparison} gives}
+have the same initial value \(0\), so Lemma~\ref{lem:cuberoot-comparison} gives
 \[
  (k_-t)^3\le y_\lambda(t)\le(k_+t)^3,
  \qquad 0\le t\le\delta.
@@ -2998,7 +2947,7 @@ linear asymptotics cannot be the left endpoint $\lambda_*\in\mathcal A$.
 Suppose $\lambda_0\in\mathcal A$ and
 \(W_{\lambda_0}(u)\sim u/\lambda_0\) as \(u\downarrow 0\).
 Choose some \(k>1/\lambda_0\). Then
-\(\lambda_0k-1>0\). Choose \rev{a} small \(\eta>0\) such that
+\(\lambda_0k-1>0\). Choose a small \(\eta>0\) such that
 \[
  W_{\lambda_0}(\eta)<k\eta,
  \qquad
@@ -3140,10 +3089,10 @@ Since $Y(t),P_8(t)\to y_*$, one has $A(t)\to\mu$.
 
 Assume first that $\mu<0$.  Choose $T\ge T_0$ and $\alpha>0$ such that
 $A(t)\le-\alpha$ for $t\ge T$.  Variation of constants gives
-\begin{revequation}
+\begin{equation*}
  R(t)=\exp\left\{\int_T^tA(r)\,\dd r\right\}R(T)
  -\int_T^t\exp\left\{\int_s^tA(r)\,\dd r\right\}D_8(s)\,\dd s.
-\end{revequation}
+\end{equation*}
 The first term is exponentially small.  For the integral term, split the
 integral at $t/2$.  For $t\ge2T$, \eqref{eq:D8-bound} gives
 \[
@@ -3207,11 +3156,11 @@ $\lambda>0$.
 
 If $W(u)\sim u/\lambda$ as $u\downarrow0$, then $W$ extends to a
 $C^4$ function on $[0,1)$ and
-\begin{revequation}
+\begin{equation*}
  W(u)=\frac u\lambda+
  \left(\lambda^{-4}-\lambda^{-1}\right)u^2+O(u^3)
  \quad\text{as }u\downarrow0.
-\end{revequation}
+\end{equation*}
 More precisely, there exist $\eta>0$, coefficients $c_3,c_4,c_5$, and a
 function $\rho_0\in C^4((0,\eta])$ such that
 \begin{samepage}
@@ -3229,12 +3178,12 @@ for $0\le k\le4$.
 
 If $W(u)\sim(1-u)/\lambda$ as $u\uparrow1$, then $W$ extends to a
 $C^4$ function on $(0,1]$ and
-\begin{revequation}
+\begin{equation*}
  W(u)=\frac{1-u}{\lambda}
  -\left(\lambda^{-4}+\lambda^{-1}\right)(1-u)^2
  +O((1-u)^3)
  \quad\text{as }u\uparrow1.
-\end{revequation}
+\end{equation*}
 More precisely, there exist $\eta>0$, coefficients
 $\widehat c_3,\widehat c_4,\widehat c_5$, and a function
 $\rho_1\in C^4((0,\eta])$ such that, with $r=1-u$,
@@ -3268,12 +3217,12 @@ Consider first the endpoint $u=0$ and set
  \qquad t>1.
 \]
 Substitution of $W(u)=uY(u^{-1})$ into \eqref{eq:W-ode} gives
-\begin{revequation}
+\begin{equation*}
  Y'(t)=-\frac{\lambda Y(t)-1}{Y(t)^2}
        -\frac{1-Y(t)^3}{tY(t)^2},
  \qquad
  Y(t)\longrightarrow \lambda^{-1}.
-\end{revequation}
+\end{equation*}
 Thus Lemma~\ref{lem:finite-asymptotic-ode} applies with
 \[
  F_0(y)=\frac{1-\lambda y}{y^2},
@@ -3310,12 +3259,12 @@ For the endpoint $u=1$, set
  \qquad t>1.
 \]
 Then
-\begin{revequation}
+\begin{equation*}
  \widehat Y'(t)=\frac{\lambda\widehat Y(t)-1}{\widehat Y(t)^2}
  +\frac{1+\widehat Y(t)^3}{t\widehat Y(t)^2},
  \qquad
  \widehat Y(t)\longrightarrow\lambda^{-1}.
-\end{revequation}
+\end{equation*}
 Here Lemma~\ref{lem:finite-asymptotic-ode} applies with
 \[
  F_1(y)=\frac{\lambda y-1}{y^2},
@@ -3372,11 +3321,11 @@ linear.  Lemma~\ref{lem:linear-branch-regularity} therefore applies at
 $u=0$ and $u=1$.
 
 Define
-\begin{revequation}
+\begin{equation*}
  \Theta_{\lambda}(v)=\int_{1/2}^{v}
  \frac{\dd s}{\beta W_{\lambda}(1-s)},
  \qquad 0<v<1.
-\end{revequation}
+\end{equation*}
 As $s\downarrow0$,
 $W_{\lambda}(1-s)\sim s/\lambda$, whereas as $s\uparrow1$,
 $W_{\lambda}(1-s)\sim(1-s)/\lambda$.  Hence
@@ -3588,49 +3537,34 @@ prove \eqref{eq:q-extension-bounds}.
 \section*{Acknowledgments}
 The authors would like to thank Zhan Shi for suggesting this topic.
 
-\section*{Data availability}
-\begin{revision}
-No empirical data sets were generated or analyzed in this study.  The
-machine-checkable Lean sources, manuscript--formalization crosswalks, and
-verification reports are included in the versioned software release described
-below.
-\end{revision}
-
-\section*{Code availability}
-\begin{revision}
-The Lean~4 development formalizing the appendix, the traditional graph
-semantics, and the proof graph for the three principal results is versioned at
-\url{https://github.com/iyalice/Series-Parallel}.  Its frozen release is
-\texttt{v1.0.1}, at commit
-\texttt{a661859343939016608333bd2673d433c34518f2}.  The release landing page is
-\url{https://github.com/iyalice/Series-Parallel/releases/tag/v1.0.1}, and the
-corresponding source archive is
-\url{https://github.com/iyalice/Series-Parallel/archive/refs/tags/v1.0.1.zip}.
-The release contains the manuscript--formalization source crosswalk, build and
-axiom reports, reproduction instructions, and the explicitly documented
-external mathematical interfaces that form the stated trust boundary.  It is
-checked with Lean~4.32.1 and mathlib~v4.32.1 at commit
-\texttt{520045ab14e26149ee970e2e617ca04b09bde5d6}, and it is distributed under
-the Apache-2.0 license.  The repository is currently access-controlled, and no
-DOI has been assigned to this release.  The software citation is
-\cite{DingHeLiangZheng2026Software}.
-\end{revision}
-
-\section*{Declaration of generative AI and AI-assisted technologies\\
-in the manuscript preparation process}
-\begin{revision}
-During the preparation of this work, the authors used OpenAI ChatGPT with the
-GPT-5.6 model identified in the project record and OpenAI Codex with a
-GPT-5-family model (the client did not expose a more specific deployment
-identifier).  These tools assisted with initial mathematical proof sketches,
-Lean declaration and proof drafts, mathlib search, consistency checks,
-language editing, and suggestions for the manuscript--formalization
-crosswalk.  The authors subsequently reconstructed, checked, and revised the
-mathematical arguments; verified the references; reviewed the Lean source and
-its documented axiom dependencies; and validated the manuscript--formalization
-correspondence.  The authors made all final mathematical and editorial
-decisions and take full responsibility for the content of the article.
-\end{revision}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 
 \begin{thebibliography}{99}
 
@@ -3684,11 +3618,11 @@ systems},
 arXiv:2511.16880v2 [math.PR], 2026.
 \url{https://doi.org/10.48550/arXiv.2511.16880}
 
-\bibitem{DingHeLiangZheng2026Software}
-\rev{[software] R.~Ding, Z.~He, Y.~Liang, and Y.~Zheng,}
-\rev{\emph{Lean~4 formalization for Distance and resistance on random
-series--parallel graphs}, version 1.0.1, 2026.}
-\rev{\url{https://github.com/iyalice/Series-Parallel/releases/tag/v1.0.1}}
+%
+%
+%
+%
+%
 
 \bibitem{HamblyJordan2004}
 B.~M. Hambly and J.~Jordan,

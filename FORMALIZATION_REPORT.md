@@ -1,132 +1,49 @@
-# Series--parallel formalization report
+# Formalization report
 
-Status date: 2026-08-29
-Status: **COMPLETE**
+Status: **complete**
+Manuscript: `Distance_and_resistance_arxiv_amsart.tex`
 
-## Scope and result
+## Main result
 
-The development proves the three principal manuscript theorems and supplies a faithful traditional
-graph interpretation of the distance and resistance random variables. Every `SPNetwork` is
-realized as a finite edge-indexed two-terminal multigraph. General-walk distance and
-Kirchhoff--Thomson effective resistance of that realization are proved equal to the recursive
-evaluators.
+The Lean development proves every clause of the three main results in the manuscript.
 
-```text
-SeriesParallel.MainText.SPNetwork.traditionalDistance_realize
-SeriesParallel.MainText.SPNetwork.traditionalResistance_realize
-SeriesParallel.MainText.GraphSemantics.graphLogarithmicSpeeds
-SeriesParallel.MainText.GraphSemantics.graphFirstMomentLogarithmicRates
-SeriesParallel.MainText.GraphSemantics.graphResistanceSpeedNearCritical
-```
+| PDF result | Mathematical content | Lean declaration | External input |
+|---|---|---|---|
+| Theorem 1.1 | Almost-sure and $L^1$ logarithmic speeds for $D_n(p)$ and $R_n(p)$, with the stated identities and bounds on the full parameter range | `SeriesParallel.MainText.logarithmicSpeeds` | $\gamma_D(1/2)=0$ |
+| Theorem 1.2 | Existence and identification of both first-moment logarithmic rates | `SeriesParallel.MainText.firstMomentLogarithmicRates` | $\gamma_D(1/2)=0$ |
+| Theorem 1.3 | Existence and characterization of $\lambda_*$ and the sharp near-critical resistance asymptotics | `SeriesParallel.MainText.resistanceSpeedNearCritical` | compact-interval Peano existence |
 
-## Toolchain and build surface
+Thus Theorems 1.1, 1.2, and 1.3 are fully formalized. The first two theorems do not use the Peano
+interface, and the third theorem does not use the critical-distance interface.
 
-- Lean 4.32.1; Lake 5.0.0.
-- mathlib v4.32.1 at commit `520045ab14e26149ee970e2e617ca04b09bde5d6`.
-- Apache-2.0 license.
-- Graph-semantics aggregate: successful, 8,726 jobs.
-- Main-text public API: successful, 8,728 jobs.
-- Full project build: successful, 8,733 jobs.
-- Placeholder audit: `PASS (80 files, 2 axiom declarations)`.
+## Supporting results
 
-## Traditional graph layer
+The 29 numbered theorem, proposition, and lemma environments are listed by their printed PDF
+numbers in [MANUSCRIPT_LEAN_CORRESPONDENCE.md](MANUSCRIPT_LEAN_CORRESPONDENCE.md). The complete
+label-level audit contains 136 active labels: 98 in the main text and 38 in the appendices.
 
-`GraphSemantics.TwoTerminalMultigraph` bundles finite vertex and physical-edge types, decidable
-equality, endpoint maps, and distinct terminals. The electrical layer is edge-indexed, so parallel
-edges remain distinct energy terms. The simple undirected shadow is used only for distance.
+The only qualified auxiliary entry is Lemma 4.5: Lean exports the error estimate used in the proof
+of Theorem 1.3, but does not package every clause of the displayed standalone lemma as one theorem.
+This does not weaken any main-theorem statement or leave any gap in their proof paths.
 
-- `traditionalDistance` is terminal `SimpleGraph.dist`.
-- `Current` is `Edge -> Real` with no sign restriction.
-- `divergence` and `IsThroughFlow I` impose the full vertex-wise Kirchhoff equations.
-- `unitEnergy` is the sum of squared currents over physical edges.
-- `traditionalResistance` is the infimum of conventional unit-flow energies.
-
-The raw graph layer does not claim that every graph has a unit flow. `HasUnitFlow` records
-nonemptiness; the realization bridge constructs an attaining unit flow before using the infimum.
-
-## Structural realization
-
-`SPNetwork.PhysicalEdge` has one leaf edge and disjoint-sum child edges at both gates.
-`SPNetwork.InternalVertex` creates one tagged join at a series gate and disjoint child interiors.
-`SPNetwork.RealizedVertex` adds two boundary tags. `SPNetwork.realize` supplies the bundled graph.
-
-Its certificates include `realize_noLoops`, `realize_edgeCard`, endpoint and embedding lemmas, the
-three small edge-count regressions, and `twoParallel_physicalEdges_distinct`. Realization
-definition bodies inspect the syntax constructors only and contain neither evaluator.
-
-## Distance bridge
-
-The upper bound maps the recursive shortest path to a graph walk through `Path.toRealizeWalk`;
-`Path.length_toRealizeWalk` preserves length and `realize_reachable` excludes the disconnected
-junk case. The lower bound uses `vertexLevel`, whose source value is zero, sink value is
-`N.distance`, and edge increment is at most one. `distance_le_realize_walk_length` applies to
-arbitrary walks. These bounds prove `traditionalDistance_realize`.
-
-## Resistance bridge
-
-`Flow.toCurrent` maps a recursive flow witness to a conventional current.
-`flow_toCurrent_isThroughFlow` proves full feasibility, and `flow_toCurrent_unitEnergy` computes
-the scaled energy. `generalized_thomson` proves for every `I : Real` and every conventional
-`I`-through-flow current:
-
-```text
-I ^ 2 * network.resistance <= network.realize.unitEnergy current.
-```
-
-The parallel case allows arbitrary circulation. The mapped recursive optimum gives attainment;
-`resistance_isLeast_energySet` proves least energy, and `traditionalResistance_realize` identifies
-that value with the `sInf`. No inverse parametrization of conventional currents is asserted.
-
-## Random transport and theorem status
-
-`graphDistanceValue` and `graphResistanceValue` apply the traditional quantities after realizing
-the random network. `graphDistanceValue_eq_distanceValue` and
-`graphResistanceValue_eq_resistanceValue` prove exact samplewise equality. Graph versions of
-`Z`, `X`, moments, normalized sequences, and the four candidate limits are defined and proved
-equal to their scalar counterparts.
-
-| Result | Scalar theorem | Graph-facing theorem | Status |
-|---|---|---|:---:|
-| Logarithmic speeds | `MainText.logarithmicSpeeds` | `GraphSemantics.graphLogarithmicSpeeds` | proved |
-| First-moment logarithmic rates | `MainText.firstMomentLogarithmicRates` | `GraphSemantics.graphFirstMomentLogarithmicRates` | proved |
-| Near-critical resistance speed | `MainText.resistanceSpeedNearCritical` | `GraphSemantics.graphResistanceSpeedNearCritical` | proved |
-
-The graph contracts contain graph objects syntactically. Their equivalence with the scalar
-contracts transports the analytic proof graph without duplicating it.
-
-## Trust ledger
+## Trust boundary
 
 There are exactly two project axioms:
 
-| Declaration | Reachability |
-|---|---|
-| `SeriesParallel.MainText.distanceGamma_half_eq_zero` | first and second scalar and graph theorems |
-| `SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval` | third scalar and graph theorem |
+1. $\gamma_D(1/2)=0$;
+2. global existence for a scalar ODE on a compact interval under continuity and a linear-growth
+   bound.
 
-The deterministic and samplewise graph bridges have empty project-axiom fingerprints. The first
-two scalar and graph wrappers have exactly `{distanceGamma_half_eq_zero}`; the third scalar and
-graph wrappers have exactly `{MI01_global_peano_on_compact_interval}`. Standard output also lists
-`propext`, `Classical.choice`, and `Quot.sound`.
-
-## Module boundary
-
-Low-level graph, realization, and bridge files use the module/public system. Graph
-`RandomModel.lean`, `StatementContract.lean`, and `MainTheorems.lean` are legacy modules because
-they import existing legacy statement-contract and theorem modules. This compatibility boundary
-does not change declaration types, proofs, or fingerprints.
-
-The traditional definition files cannot import the recursive model. `Realization.lean` imports
-only the network syntax side. The bridge files are the first modules that see both semantic sides.
+Their exact mathematical statements and theorem dependencies are given in
+[EXTERNAL_HYPOTHESES.md](EXTERNAL_HYPOTHESES.md) and [AXIOM_REPORT.md](AXIOM_REPORT.md).
+No `sorry` or `admit` occurs in the Lean sources.
 
 ## Verification
 
-`SeriesParallel/GraphSemanticsAudit.lean` prints axioms for both deterministic bridges, both
-samplewise equalities, the three graph-facing wrappers, and the scalar theorems. The graph
-aggregate, graph audit, public API, scalar audit, external smoke file, placeholder scan, symbol-use
-scan, fingerprint comparison, and full project build all pass.
+- The attached final TeX has 136 distinct active labels in the source map, in the correct order
+  and at the recorded lines.
+- The lexical proof audit finds exactly the two declared project axioms above.
+- Release 1.0.2 pins Lean 4.32.1 and mathlib v4.32.1; the complete retained source tree
+  succeeds with `lake build`.
 
-See `SEMANTIC_BRIDGE_REPORT.md` for the acceptance table and `V5_SEMANTICS_MAP.md` for the narrow
-v5 crosswalk. The manuscript-wide correspondence is in `SOURCE_MAP.md` and
-`MANUSCRIPT_LEAN_CORRESPONDENCE.md`.
-
-Remaining formalization blockers: **none**.
+There are no remaining blockers for the three main theorems.

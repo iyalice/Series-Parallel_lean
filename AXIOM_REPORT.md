@@ -1,50 +1,56 @@
-# Axiom and trust report
+# Axiom report
 
-Audit date: 2026-08-29
+The project contains exactly two mathematical `axiom` declarations.
 
-The repository contains exactly **two project `axiom` declarations**. The traditional graph
-definitions, realization, deterministic bridges, and samplewise bridges add no project assumption.
+## External interfaces
 
-## Project assumptions
+### A1. Critical distance first-moment rate
 
-| Class | Fully qualified declaration | Exact role | Reachability |
-|---|---|---|---|
-| literature | `SeriesParallel.MainText.distanceGamma_half_eq_zero` | `gammaD (1 / 2) = 0` | scalar and graph logarithmic-speed and first-moment-rate theorems |
-| appendix interface | `SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval` | compact-interval Peano existence under linear growth | scalar and graph near-critical resistance theorem |
+With
+$$
+\gamma_D(p)=\lim_{n\to\infty}\frac1n\log\mathbb E[D_n(p)],
+$$
+the admitted statement is
+$$
+\gamma_D\!\left(\frac12\right)=0.
+$$
+The existence of this limit is proved inside the project; only its critical value is external.
+The Lean declaration is
+`SeriesParallel.MainText.distanceGamma_half_eq_zero`.
 
-`diffusionCoefficient_eq_two_mul_zetaThree` is proved internally and is not an interface.
+### A2. Compact-interval Peano existence
 
-## Exact fingerprints
+Let $t_0<T$, $y_0\in\mathbb R$, and let
+$F:[t_0,T]\times\mathbb R\to\mathbb R$ be continuous. If $A,B\geq0$ and
+$$
+|F(t,y)|\leq A+B|y|
+\qquad(t\in[t_0,T],\ y\in\mathbb R),
+$$
+then there is a function $y:\mathbb R\to\mathbb R$ such that
+$$
+y(t_0)=y_0,\qquad y|_{[t_0,T]}\in C([t_0,T]),qquad
+y'(t)=F(t,y(t))\quad(t_0<t<T).
+$$
+The Lean declaration is
+`SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval`.
 
-The table removes Lean's standard principles `propext`, `Classical.choice`, and `Quot.sound` from
-each `#print axioms` result.
+## Main-theorem fingerprints
 
-| Declaration | Exact project-axiom fingerprint |
-|---|---|
-| `SeriesParallel.MainText.SPNetwork.traditionalDistance_realize` | empty |
-| `SeriesParallel.MainText.SPNetwork.traditionalResistance_realize` | empty |
-| `SeriesParallel.MainText.GraphSemantics.graphDistanceValue_eq_distanceValue` | empty |
-| `SeriesParallel.MainText.GraphSemantics.graphResistanceValue_eq_resistanceValue` | empty |
-| `SeriesParallel.MainText.logarithmicSpeeds` | `{SeriesParallel.MainText.distanceGamma_half_eq_zero}` |
-| `SeriesParallel.MainText.GraphSemantics.graphLogarithmicSpeeds` | `{SeriesParallel.MainText.distanceGamma_half_eq_zero}` |
-| `SeriesParallel.MainText.firstMomentLogarithmicRates` | `{SeriesParallel.MainText.distanceGamma_half_eq_zero}` |
-| `SeriesParallel.MainText.GraphSemantics.graphFirstMomentLogarithmicRates` | `{SeriesParallel.MainText.distanceGamma_half_eq_zero}` |
-| `SeriesParallel.MainText.resistanceSpeedNearCritical` | `{SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval}` |
-| `SeriesParallel.MainText.GraphSemantics.graphResistanceSpeedNearCritical` | `{SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval}` |
+After omitting Lean's standard logical principles, the project-axiom dependencies are exactly:
 
-The graph wrapper fingerprints exactly match their scalar counterparts. The deterministic and
-samplewise bridges contain no project axiom in their transitive dependency closure.
+| PDF result | Lean theorem | Project axiom |
+|---|---|---|
+| Theorem 1.1 | `SeriesParallel.MainText.logarithmicSpeeds` | A1 only |
+| Theorem 1.2 | `SeriesParallel.MainText.firstMomentLogarithmicRates` | A1 only |
+| Theorem 1.3 | `SeriesParallel.MainText.resistanceSpeedNearCritical` | A2 only |
 
-## Structural trust checks
+In particular, Theorem 1.3 is independent of A1, while Theorems 1.1 and 1.2 are independent of A2.
+The closed-form identity for the diffusion coefficient, including
+$a=2\zeta(3)$, is proved internally and is not an external interface.
 
-- `Basic.lean`, `TraditionalDistance.lean`, and `TraditionalResistance.lean` cannot see the
-  recursive evaluator modules through their imports.
-- `Realization.lean` imports the network syntax, but its realization, endpoint, and embedding
-  definition bodies contain neither `.distance` nor `.resistance`.
-- No graph-semantics source contains `sorry`, `admit`, `unsafe`, or an `axiom` declaration.
-- The project placeholder audit reports `PASS (80 files, 2 axiom declarations)`.
-- `SeriesParallel/GraphSemanticsAudit.lean` prints every bridge, wrapper, and scalar fingerprint
-  listed above.
+The complete `#print axioms` output also contains `propext`, `Classical.choice`, and `Quot.sound`.
+These are standard Lean logical principles, not additional mathematical assumptions about the
+series--parallel model.
 
-The accepted base is Lean 4.32.1, mathlib v4.32.1 at commit
-`520045ab14e26149ee970e2e617ca04b09bde5d6`, the Lean kernel, and the two listed interfaces.
+The lexical audit reports exactly these two project axioms and no `sorry`, `admit`, `unsafe`, or
+opaque proof escape.
