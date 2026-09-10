@@ -12,10 +12,10 @@ depth $n$.
 1. **Theorem 1.1 (logarithmic speeds).** For every $p\in[0,1]$, there are deterministic constants
    $v_D(p)$ and $v_R(p)$ such that
    
-   $$
+   ```math
    \frac{1}{n}\log D_n(p)\longrightarrow v_D(p),\qquad
    \frac{1}{n}\log R_n(p)\longrightarrow v_R(p)
-   $$
+   ```
    
    almost surely and in $L^1$. Moreover, $v_D(p)=0$ for $p\leq 1/2$,
    $v_R(1-p)=-v_R(p)$, and $v_D(p),v_R(p)\in[\log(2p),\log 2]$ for $p>1/2$.
