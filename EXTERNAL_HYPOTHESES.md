@@ -13,14 +13,14 @@ $$
 The admitted value is
 
 $$\\
-\boxed{\gamma_D\!\left(\frac12\right)=0.}
+\boxed{\gamma_D\left(\frac12\right)=0.}
 $$
 
 Equivalently,
 
 $$\\
 \lim_{n\to\infty}\frac1n
-\log\mathbb E\!\left[D_n\!\left(\frac12\right)\right]=0.
+\log\mathbb E\left[D_n\left(\frac12\right)\right]=0.
 $$
 
 The existence of the limit is proved internally; the external input supplies only its value at
