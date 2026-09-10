@@ -51,7 +51,7 @@ $$
 and
 
 $$\\
-y'(t)=F(t,y(t))\qquad (t\in[t_0,T]).
+y'(t)=F(t,y(t))\qquad (t\in(t_0,T)).
 $$
 
 No assertion is made about $y$ outside $[t_0,T]$. In Lean this is
