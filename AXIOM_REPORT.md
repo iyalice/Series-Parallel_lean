@@ -35,8 +35,8 @@ $$
 then there is a function $y:\mathbb R\to\mathbb R$ such that
 
 $$\\
-y(t_0)=y_0,\qquad y|_{[t_0,T]}\in C([t_0,T]),qquad
-y'(t)=F(t,y(t))\quad(t_0<t<T).
+y(t_0)=y_0,\qquad y|_{[t_0,T]}\in C([t_0,T]),\qquad
+y'(t)=F(t,y(t))\quad(t\in(t_0,T)).
 $$
 
 The Lean declaration is
