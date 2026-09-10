@@ -1,7 +1,7 @@
 # Formalization report
 
 Status: **complete**
-Manuscript: `Distance_and_resistance_arxiv_amsart.tex`
+Manuscript: `Series-Parallel_arxiv_submission.tex`
 
 ## Main result
 
@@ -20,9 +20,9 @@ interface, and the third theorem does not use the critical-distance interface.
 
 The 29 numbered theorem, proposition, and lemma environments are listed by their printed PDF
 numbers in [MANUSCRIPT_LEAN_CORRESPONDENCE.md](MANUSCRIPT_LEAN_CORRESPONDENCE.md). The complete
-label-level audit contains 136 active labels: 98 in the main text and 38 in the appendices.
+label-level audit contains 136 active labels: 101 in the main text and 35 in the appendices.
 
-The only qualified auxiliary entry is Lemma 4.5: Lean exports the error estimate used in the proof
+The only qualified auxiliary entry is Lemma 4.8: Lean exports the error estimate used in the proof
 of Theorem 1.3, but does not package every clause of the displayed standalone lemma as one theorem.
 This does not weaken any main-theorem statement or leave any gap in their proof paths.
 
@@ -39,6 +39,17 @@ Their exact mathematical statements and theorem dependencies are given in
 No `sorry` or `admit` occurs in the Lean sources.
 
 ## Verification
+
+The manuscript reference was refreshed on 2026-09-10. The sole reference is
+`Series-Parallel_arxiv_submission.tex`; its source order, label lines, LF-normalized SHA-256,
+and all 29 printed theorem/proposition/lemma numbers were checked against a fresh LaTeX build.
+Proposition 4.1 is the admissible-parameter result now stated in the main text, with its proof
+in Appendix A. The formula `eq:Z-halfline` now displays the bounds on the critical parameter;
+its source-map entry points to the bound declarations.
+
+This refresh changes the manuscript and its documentation. Lean sources, theorem signatures,
+and the two external inputs are unchanged; the full-build statement below records the retained
+release verification, not a new Lean build for this documentation refresh.
 
 - The attached final TeX has 136 distinct active labels in the source map, in the correct order
   and at the recorded lines.

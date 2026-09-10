@@ -28,7 +28,7 @@ MAIN_TEXT_*.md
 Series_Parallelv2_*.md
 Series_Parallel_v3_logic_language_AI_audit_*.md
 
-# Obsolete journal-template files; the canonical SPA manuscript uses Elsevier CAS
+# Obsolete journal-template files; the canonical arXiv manuscript uses amsart
 imsart-number.bst
 imsart.cls
 imsart.sty

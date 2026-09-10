@@ -4,6 +4,11 @@ This repository accompanies *Distance and resistance on random series--parallel 
 logarithmic speeds and near-critical asymptotics*. The Lean 4 formalization of all three main
 theorems is complete.
 
+The sole manuscript reference for this repository and its reports is
+[Series-Parallel_arxiv_submission.tex](Series-Parallel_arxiv_submission.tex).
+Its active labels, source lines, and content fingerprint are recorded in
+[SOURCE_MAP.md](SOURCE_MAP.md).
+
 ## Formalized results
 
 Let $D_n(p)$ and $R_n(p)$ be the boundary-to-boundary graph distance and effective resistance at
@@ -81,5 +86,16 @@ The pinned environment is Lean 4.32.1 with mathlib v4.32.1. From the repository 
 ```text
 lake build
 ```
+
+To compile the manuscript and verify the reports against its printed numbering, run:
+
+```text
+latexmk -pdf -interaction=nonstopmode -halt-on-error Series-Parallel_arxiv_submission.tex
+python scripts/check_manuscript.py --aux Series-Parallel_arxiv_submission.aux
+```
+
+The manuscript check can also run without `--aux` to validate its fingerprint, labels,
+source-map order, and ownership without compiling LaTeX. Run these commands from the repository
+root. Python 3 and a LaTeX installation are required for the respective checks.
 
 The project is released under the Apache-2.0 license.
