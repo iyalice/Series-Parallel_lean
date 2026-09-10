@@ -48,17 +48,17 @@ depth $n$.
    $\delta\downarrow0$,
    
    $$\\
-   v_R\!\left(\frac12+\delta\right)
-   =-v_R\!\left(\frac12-\delta\right)
+   v_R\left(\frac12+\delta\right)
+   =-v_R\left(\frac12-\delta\right)
    \sim 2\zeta(3)^{1/3}\lambda_*\delta^{2/3},
    $$
    
    and
    
    $$\\
-   \gamma_R\!\left(\frac12+\delta\right)
+   \gamma_R\left(\frac12+\delta\right)
    \sim 2\zeta(3)^{1/3}\lambda_*\delta^{2/3},\qquad
-   \gamma_R\!\left(\frac12-\delta\right)\sim-2\delta.
+   \gamma_R\left(\frac12-\delta\right)\sim-2\delta.
    $$
 
 The corresponding Lean declarations are:
