@@ -33,7 +33,7 @@ depth $n$.
    where $\log 0=-\infty$. In particular, $\gamma_R(p)=v_R(p)$ for
    $p\in[1/2,1]$.
 
-4. **Theorem 1.3 (resistance speed near criticality).** Let $\lambda_{\*} $ be the least positive
+4. **Theorem 1.3 (resistance speed near criticality).** Let $\lambda_{\ast}$ be the least positive
    $\lambda$ for which
    $$
    W^2W'-\lambda W+u(1-u)=0,\qquad W(0)=W(1)=0,
