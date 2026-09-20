@@ -1,6 +1,6 @@
 # Manuscript--Lean correspondence
 
-Authoritative manuscript source: `Series-Parallel_arxiv_submission.tex`. The table follows its
+Authoritative manuscript source: `Series_Parallel.tex`. The table follows its
 printed numbering. It contains all 29 theorem, proposition, and lemma environments: 21 in the main
 text and 8 in the appendices. TeX labels and TeX line numbers are intentionally confined to
 [SOURCE_MAP.md](SOURCE_MAP.md).
@@ -14,7 +14,15 @@ appropriate.
 |---|---|---|
 | Theorem 1.1 (logarithmic speeds) | `GraphSemantics.graphLogarithmicSpeeds`; `logarithmicSpeeds` | complete |
 | Theorem 1.2 (first-moment logarithmic rates) | `GraphSemantics.graphFirstMomentLogarithmicRates`; `firstMomentLogarithmicRates` | complete |
-| Theorem 1.3 (resistance speed near criticality) | `GraphSemantics.graphResistanceSpeedNearCritical`; `resistanceSpeedNearCritical` | complete |
+| Theorem 1.3 (resistance speed near criticality) | `GraphSemantics.graphResistanceSpeedNearCritical`; `resistanceSpeedNearCritical`; `mainAdmissible_eq_Ici_lambdaStar` | joint coverage: the near-critical theorem and the admissible-halfline identity together cover the manuscript statement |
+
+For Theorem 1.3, the scalar and traditional-graph wrappers contain the least-element
+statement `IsLeast mainAdmissible lambdaStar`. This alone does not assert that every
+parameter above the threshold is admissible. The additional theorem
+`SeriesParallel.MainText.mainAdmissible_eq_Ici_lambdaStar`, in
+`MainText/NearCriticalAssembly.lean`, supplies exactly
+`mainAdmissible = Set.Ici lambdaStar`. Both wrappers use this same ODE admissibility set,
+so the same supplementary theorem completes the coverage of each representation.
 
 ## Supporting results in the main text
 
@@ -44,7 +52,7 @@ appropriate.
 | PDF result | Lean declaration(s) | Coverage |
 |---|---|---|
 | Lemma A.1 | `cuberoot_comparison_source` | exact |
-| Lemma A.2 | `shootingProperties`; `shootingYMap_norm_sub_le` | covers the stated continuity; Lean additionally proves a parameter Lipschitz estimate |
+| Lemma A.2 | `shootingProperties`; `shootingYMap_norm_sub_le` | covers the stated continuity; the unlabelled Lipschitz constant in the manuscript proof is sharper than the exported constant (see below) |
 | Proposition A.3 | `subcriticalW` | exact |
 | Lemma A.4 | `linearAtOne`; `WSolution_linearAtOne` | exact |
 | Lemma A.5 | `leftEndpointDichotomy_source` | exact |
@@ -53,3 +61,13 @@ appropriate.
 | Lemma B.2 | `leftLinearBranchRegularity_source`; `rightLinearBranchRegularity_source`; `linearBranchRegularity_source` | exact |
 
 The qualification for Lemma 4.8 does not affect the closure of any of Theorems 1.1--1.3.
+At the displayed-equation level, `eq:q-uniform-bound` is also qualified: the manuscript
+gives `q <= exp(M)/2`, whereas `full_line_density_sq_le_exp` exports
+`q^2 <= exp(M) * q`, the weaker estimate needed in the proof. Thus coverage of the main
+theorems and their proof dependencies does not mean that every auxiliary formula or
+constant is exported verbatim. See [SOURCE_MAP.md](SOURCE_MAP.md) for these distinctions.
+
+In the proof of Lemma A.2 the manuscript obtains constant `3 * 2^(-1/3)` from
+`y <= 1/2`. The exported `shootingYMap_norm_sub_le` uses `3 * (3/4)^(1/3)`.
+The labelled continuity conclusion is fully covered; the sharper proof-local
+constant is not represented as an exact standalone Lean export.

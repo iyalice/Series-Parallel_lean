@@ -5,7 +5,7 @@ logarithmic speeds and near-critical asymptotics*. The Lean 4 formalization of a
 theorems is complete.
 
 The sole manuscript reference for this repository and its reports is
-[Series-Parallel_arxiv_submission.tex](Series-Parallel_arxiv_submission.tex).
+[Series_Parallel.tex](Series_Parallel.tex).
 Its active labels, source lines, and content fingerprint are recorded in
 [SOURCE_MAP.md](SOURCE_MAP.md).
 
@@ -17,7 +17,7 @@ depth $n$.
 1. **Theorem 1.1 (logarithmic speeds).** For every $p\in[0,1]$, there are deterministic constants
    $v_D(p)$ and $v_R(p)$ such that
    
-   $$\\
+   $$
    \frac{1}{n}\log D_n(p)\longrightarrow v_D(p),\qquad
    \frac{1}{n}\log R_n(p)\longrightarrow v_R(p)
    $$
@@ -25,16 +25,16 @@ depth $n$.
    almost surely and in $L^1$. Moreover, $v_D(p)=0$ for $p\leq 1/2$,
    $v_R(1-p)=-v_R(p)$, and $v_D(p),v_R(p)\in[\log(2p),\log 2]$ for $p>1/2$.
 
-3. **Theorem 1.2 (first-moment logarithmic rates).** For every $p\in[0,1]$, the limits
+2. **Theorem 1.2 (first-moment logarithmic rates).** For every $p\in[0,1]$, the limits
    
-   $$\\
+   $$
    \gamma_D(p)=\lim_{n\to\infty}\frac{1}{n}\log\mathbb E D_n(p),\qquad
    \gamma_R(p)=\lim_{n\to\infty}\frac{1}{n}\log\mathbb E R_n(p)
    $$
    
    exist and satisfy
    
-   $$\\
+   $$
    \gamma_D(p)=v_D(p),\qquad
    \gamma_R(p)=v_R(p)\vee\log(2p),
    $$
@@ -42,17 +42,17 @@ depth $n$.
    where $\log 0=-\infty$. In particular, $\gamma_R(p)=v_R(p)$ for
    $p\in[1/2,1]$.
 
-5. **Theorem 1.3 (resistance speed near criticality).** Let $\lambda_{\ast}$ be the least positive
+3. **Theorem 1.3 (resistance speed near criticality).** Let $\lambda_{\ast}$ be the least positive
    $\lambda$ for which
    
-   $$\\
+   $$
    W^2W'-\lambda W+u(1-u)=0,\qquad W(0)=W(1)=0,
    $$
    
    has a solution $W\in C([0,1])\cap C^1((0,1))$ that is positive on $(0,1)$. Then, as
    $\delta\downarrow0$,
    
-   $$\\
+   $$
    v_R\left(\frac12+\delta\right)
    =-v_R\left(\frac12-\delta\right)
    \sim 2\zeta(3)^{1/3}\lambda_*\delta^{2/3},
@@ -60,7 +60,7 @@ depth $n$.
    
    and
    
-   $$\\
+   $$
    \gamma_R\left(\frac12+\delta\right)
    \sim 2\zeta(3)^{1/3}\lambda_*\delta^{2/3},\qquad
    \gamma_R\left(\frac12-\delta\right)\sim-2\delta.
@@ -72,7 +72,15 @@ The corresponding Lean declarations are:
 |---|---|
 | Theorem 1.1 | `SeriesParallel.MainText.logarithmicSpeeds` |
 | Theorem 1.2 | `SeriesParallel.MainText.firstMomentLogarithmicRates` |
-| Theorem 1.3 | `SeriesParallel.MainText.resistanceSpeedNearCritical` |
+| Theorem 1.3 (joint coverage) | `SeriesParallel.MainText.resistanceSpeedNearCritical`; `SeriesParallel.MainText.mainAdmissible_eq_Ici_lambdaStar` |
+
+Theorem 1.3 asserts that the admissible parameters form the entire halfline
+`Set.Ici lambdaStar`. This clause is supplied by `mainAdmissible_eq_Ici_lambdaStar`;
+the public near-critical theorem contains only the least-element statement together
+with the asymptotics. Its traditional-graph counterpart has the same joint coverage.
+Auxiliary packaging and constant differences are recorded in the correspondence and
+source-map reports; the coverage claim does not assert that every displayed formula
+is exported verbatim.
 
 The two external mathematical inputs are stated in [EXTERNAL_HYPOTHESES.md](EXTERNAL_HYPOTHESES.md)
 and audited in [AXIOM_REPORT.md](AXIOM_REPORT.md). The numbered correspondence with the paper is
@@ -90,12 +98,18 @@ lake build
 To compile the manuscript and verify the reports against its printed numbering, run:
 
 ```text
-latexmk -pdf -interaction=nonstopmode -halt-on-error Series-Parallel_arxiv_submission.tex
-python scripts/check_manuscript.py --aux Series-Parallel_arxiv_submission.aux
+latexmk -pdf -interaction=nonstopmode -halt-on-error Series_Parallel.tex
+python scripts/check_manuscript.py --aux Series_Parallel.aux
 ```
 
 The manuscript check can also run without `--aux` to validate its fingerprint, labels,
 source-map order, and ownership without compiling LaTeX. Run these commands from the repository
 root. Python 3 and a LaTeX installation are required for the respective checks.
 
-The project is released under the Apache-2.0 license.
+The current manuscript/report revision is unreleased; the package version remains
+1.0.2. The project is distributed under the Apache-2.0 license.
+
+The current reference retains the AI and Lean declarations and omits code availability.
+The 2026-09-20 build, axiom outputs, source fingerprints, and reproduction commands are
+in [verification/2026-09-20](verification/2026-09-20/README.md). The review response is
+recorded in [REVISION_REVIEW.md](REVISION_REVIEW.md).

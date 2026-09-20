@@ -1,17 +1,17 @@
 \PassOptionsToPackage{hypertexnames=false}{hyperref}
-\documentclass[12pt,preprint]{amsart}
+\documentclass[12pt]{amsart}
 
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{amssymb,mathtools}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
 \usepackage{microtype}
-\usepackage{xcolor}
+\usepackage{xcolor,xurl}
 \usepackage{hyperref}
 \setlength{\oddsidemargin}{0mm}
 \setlength{\evensidemargin}{0mm}
 \setlength{\textwidth}{164mm}
-\setlength{\headheight}{0mm}
+\setlength{\headheight}{12pt}
 \setlength{\headsep}{12mm}
 \setlength{\topmargin}{0mm}
 \setlength{\textheight}{220mm}
@@ -46,44 +46,30 @@
 \newcommand{\stle}{\le_{\mathrm{st}}}
 
 \begin{document}
-%
-%
 \title[Distance and resistance on random series--parallel graphs]{Distance and resistance on random series--parallel graphs:
 logarithmic speeds and near-critical asymptotics}
-
 \author[Ding et~al.]{Ruiqi Ding}
-\author[]{Zehua He}
-\author[]{Yutao Liang}
-\author[]{Yushu Zheng}
-\thanks{Corresponding author: Zehua He.}
-
-\address{
-State Key Laboratory of Mathematical Sciences, Academy of Mathematics and
-Systems Science, Chinese Academy of Sciences, Beijing 100190, China}
-\address{
-School of Mathematical Sciences, University of Chinese Academy of Sciences,
-Beijing 100049, China}
+\address{State Key Laboratory of Mathematical Sciences, Academy of Mathematics and
+Systems Science, Chinese Academy of Sciences, Beijing 100190, China; School of
+Mathematical Sciences, University of Chinese Academy of Sciences, Beijing 100049, China}
 \email{dingruiqi@amss.ac.cn}
+\author[]{Zehua He}
+\address{State Key Laboratory of Mathematical Sciences, Academy of Mathematics and
+Systems Science, Chinese Academy of Sciences, Beijing 100190, China; School of
+Mathematical Sciences, University of Chinese Academy of Sciences, Beijing 100049, China}
 \email{hezehua@amss.ac.cn}
+\thanks{Corresponding author: Zehua He.}
+\author[]{Yutao Liang}
+\address{State Key Laboratory of Mathematical Sciences, Academy of Mathematics and
+Systems Science, Chinese Academy of Sciences, Beijing 100190, China; School of
+Mathematical Sciences, University of Chinese Academy of Sciences, Beijing 100049, China}
 \email{liangyutao@amss.ac.cn}
-\address{
-School of Mathematics, Shanghai University of Finance and Economics,
+\author[]{Yushu Zheng}
+\address{School of Mathematics, Shanghai University of Finance and Economics,
 Shanghai 200433, China}
 \email{yszheng666@gmail.com}
-
-
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-
+\keywords{Random series--parallel graph; graph distance; effective resistance;
+logarithmic speeds; near-critical asymptotics}
 \begin{abstract}
 We study the graph distance $D_n(p)$ and effective resistance
 $R_n(p)$ between the boundary vertices of a depth-$n$ random series--parallel
@@ -100,18 +86,8 @@ $v_R(\frac12+\delta)\sim
 2\zeta(3)^{1/3}\lambda_*\delta^{2/3}$ as $\delta\downarrow0$, where
 $\lambda_*>0$ is characterized by an explicit nonlinear boundary-value
 problem. This exponent $2/3$ contrasts with the exponent $1/2$ for distance
-obtained by Chen, Derrida, Duquesne, and Shi (2026).
-%
+obtained by Chen, Derrida, Duquesne, and Shi (2026). The three main theorems and their supporting proof dependencies have been formalized in Lean 4, relative to two explicitly documented external mathematical inputs.
 \end{abstract}
-
-\keywords{random series--parallel graph;
-graph distance;
-effective resistance;
-logarithmic speeds;
-near-critical asymptotics}
-%
-%
-%
 \maketitle
 \hypersetup{
   pdftitle={Distance and resistance on random series--parallel graphs:
@@ -121,6 +97,29 @@ near-critical asymptotics}
   pdfkeywords={random series--parallel graph; graph distance; effective
     resistance; logarithmic speeds; near-critical asymptotics}
 }
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
+% Source-line alignment.
 \section{Introduction}
 \label{sec:introduction}
 
@@ -169,7 +168,7 @@ first-moment logarithmic rate
 \]
 exists for every $p\in[0,1]$ and is positive exactly when $p>1/2$.  The latter
 work did not establish the corresponding almost-sure convergence for all
-$p$.  For resistance, Hambly and Jordan obtained almost-sure exponential
+$p$.  For resistance, Hambly and Jordan~\cite[Corollaries 2.1 and 2.2]{HamblyJordan2004} obtained almost-sure exponential
 upper and lower bounds for $p\ne1/2$ and proved that
 $n^{-1}\log R_n(1/2)\to0$ almost surely,
 but left the general convergence question open.
@@ -229,7 +228,7 @@ $\mathcal G_{k+1}(p)$.  Figure~\ref{fig:series-parallel-replacement}
 illustrates the first two refinement steps for one realization of the
 environment.
 
-\begin{figure}[ht]
+\begin{figure}
 \centering
 \begin{tikzpicture}[
   line width=0.7pt,
@@ -333,7 +332,7 @@ In particular,
 Figure~\ref{fig:resistance-speed-comparison} schematically illustrates
 the maximum in \eqref{eq:resistance-first-moment-dichotomy}.
 
-\begin{figure}[ht]
+\begin{figure}
 \centering
 \begin{tikzpicture}[
   scale=0.7,
@@ -414,8 +413,8 @@ For $\lambda>0$, consider the boundary-value problem
 \end{equation}
 We call $\lambda>0$ \emph{admissible} if \eqref{eq:main-W-bvp} admits a solution
 $W\in C([0,1])\cap C^1((0,1))$.
-Then there exists a smallest admissible parameter
-$\lambda_*\in (0, +\infty)$.   Moreover, as
+Then there exists $\lambda_*\in(0,\infty)$ such that $\lambda$ is admissible
+if and only if $\lambda\ge\lambda_*$.   Moreover, as
 $\delta\downarrow0$, we have
 \begin{equation}
  v_R\left(\frac12+\delta\right)
@@ -447,7 +446,7 @@ Theorem~\ref{thm:first-moment-logarithmic-rates}, their results give
  \qquad\text{as }\delta\downarrow0.
 \end{equation*}
 Thus the distance and resistance speeds vanish with different critical
-exponents $1/2$ and $2/3$, respectively.  
+exponents $1/2$ and $2/3$, respectively.
 % Remark~\ref{rem:two-thirds-heuristic} explains heuristically why the resistance exponent is $2/3$.
 \end{remark}
 
@@ -472,7 +471,7 @@ expected energy $(\E R_r(p))R_n(p)$.  Taking expectations gives first-moment
 submultiplicativity, and Fekete's subadditive lemma then gives the desired rates.  See
 Lemma~\ref{lem:first-moment-submultiplicativity} for details.
 
-The main remaining issue is to show that, for both
+In the supercritical regime $p>1/2$, the main remaining issue is to show that, for both
 $D_n(p)$ and $R_n(p)$, the gap between the logarithm of the mean and the mean
 logarithm, which we call the Jensen gap, is $o(n)$. For $p>1/2$, on the respective events
 $\{D_n(p)\ge\E D_n(p)/2\}$ and $\{R_n(p)\ge\E R_n(p)/2\}$, the corresponding
@@ -516,18 +515,21 @@ equation in Theorem~\ref{thm:near-critical-speed}:
 \[
  W^2W'-\lambda W+u(1-u)=0.
 \]
-The required admissible-parameter theory for this ODE is a specialization of
-the singular first-order theory of Engui\c{c}a, Gavioli, and
-Sanchez~\cite[Proposition~2.3 and Theorem~3.7]{EnguicaGavioliSanchez2013};
-the additional endpoint regularity needed for the discrete barriers is
-established in Appendix~\ref{app:ode}.
+The self-contained analysis in Appendices~\ref{app:ode} and
+\ref{app:regularity} provides the profiles and estimates needed to construct
+\(G_\varepsilon\). The relation to travelling-wave theory is discussed in
+Appendix~\ref{app:ode}.
+
+
 
 
 
 \begin{remark}
     The differential equation in Theorem~\ref{thm:near-critical-speed} comes
-directly from the above comparison between the CDF update and the translation. Test the operator on a slowly varying CDF
-$F_{\varepsilon,z_0}(x)=\Phi(z_0+\varepsilon x)$, with
+directly from the above comparison between the CDF update and the translation.
+Fix $\lambda>\lambda_*$ and let $\Phi=\Phi_\lambda$ be the profile in
+Proposition~\ref{prop:full-line-distribution}. Test the operator on the slowly
+varying CDF $F_{\varepsilon,z_0}(x)=\Phi(z_0+\varepsilon x)$, with
 $q=\Phi'$.  Lemma~\ref{lem:exact-cdf} and
 Lemma~\ref{lem:weighted-consistency} give, for all $x$ and $z_0$,
 \[
@@ -544,7 +546,7 @@ therefore yields the  equation
 \[
  a q q'-2\Phi(1-\Phi)=-\kappa q.
 \]
-With $q=\beta W(1-\Phi)$, $\beta^3=2/a$, and
+Here $a=2\zeta(3)$, as evaluated in Lemma~\ref{lem:diffusion-coefficient}. With $q=\beta W(1-\Phi)$, $\beta^3=2/a$, and
 $\kappa=2\lambda/\beta$, this equation is exactly
 $W^2W'-\lambda W+u(1-u)=0$.   Remark~\ref{rem:two-thirds-heuristic} records the corresponding
 scaling balance.
@@ -594,53 +596,60 @@ Sections~\ref{sec:ballistic-proof}
 and~\ref{sec:two-sided-barriers} prove
 Theorems~\ref{thm:logarithmic-speeds}--\ref{thm:first-moment-logarithmic-rates}
 and Theorem~\ref{thm:near-critical-speed}, respectively.
-Appendix~\ref{app:ode} and Appendix~\ref{app:regularity} establish the
+Appendices~\ref{app:ode} and~\ref{app:regularity} establish the
 ODE analysis used in the upper and lower bound arguments of Section~\ref{sec:two-sided-barriers}.
 
 For real-valued random variables $U$ and $V$, we write
 $U\stle V$ when $U$ is stochastically dominated by $V$.  We write
 $x_+:=\max\{x,0\}$ unless otherwise specified.   For positive quantities, $f\asymp g$
-means that the ratio of their absolute value is bounded above and below by positive constants in
+means that their ratio is bounded above and below by positive constants in
 the stated regime.  Unless stated otherwise, $c$ and $C$ denote finite
 positive constants whose values may change from line to line.
 
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
+\subsection{AI-assisted proof development and formal verification}
+\label{subsec:ai-methodology}
+
+Generative-AI tools were used as part of the research methodology.
+In particular, OpenAI ChatGPT 5.6 Sol and Codex
+were used to generate initial drafts of the mathematical proofs and to generate
+initial versions of the Lean~4 formalization.  The tools were also used
+to compare the informal and formal statements and to identify missing
+hypotheses, unused assumptions, and possible gaps in the dependency
+structure.  No output of a generative-AI tool was treated as mathematical
+evidence or accepted solely on the basis of its generation.
+
+Every mathematical argument was subsequently reconstructed and checked
+by the authors.  This verification included checking the quantifiers,
+parameter ranges, limiting modes, constants, signs, and dependence of
+each result on earlier lemmas; independently verifying cited results
+against their original sources; and revising or replacing generated
+arguments whenever the authors could not justify every step.  The final
+mathematical statements, proofs, interpretations, and claims of novelty
+were determined and approved by the authors, who take full responsibility
+for their correctness.
+
+The main results were additionally formalized in Lean~4.  The
+formalization was checked by compiling the complete project with
+\texttt{lake build}, searching the source tree for unfinished proof
+constructs such as \texttt{sorry} and \texttt{admit}, inspecting the
+axiom dependencies of the final theorem declarations, and comparing
+each formal theorem with its numbered manuscript counterpart through a
+source map.  The formalization is complete relative to the following
+two explicitly isolated external mathematical inputs:
+\(    \gamma_D(1/2)=0, \)
+and compact-interval Peano existence for scalar ordinary differential
+equations under continuity and a linear-growth bound.  Thus the
+formal verification does not claim an unconditional derivation of
+these two inputs within Lean.  All remaining project-specific
+dependencies of the three main theorem declarations are proved within
+the formal development. Theorem~\ref{thm:near-critical-speed} is covered
+jointly by the public near-critical theorem and the admissible-halfline identity
+\texttt{mainAdmissible\_eq\_Ici\_lambdaStar}; the same qualification applies
+to the traditional graph formulation. Coverage of the main theorems and their
+proof dependencies does not mean that every auxiliary formula or constant is
+exported verbatim. The correspondence report records these distinctions.
+The archived software release is cited in~\cite{DingHeLiangZheng2026Software}.
+
 \section{Preliminaries}
 \label{sec:preliminaries}
 
@@ -684,7 +693,7 @@ recursion:
  \begin{cases}
  Z_n^{(\eta,1)}(p)+Z_n^{(\eta,2)}(p),&\text{with probability }p,\\[2mm]
  \Pi_\eta\!\left(Z_n^{(\eta,1)}(p),Z_n^{(\eta,2)}(p)\right),
-     &\text{with probability }1-p,
+     &\text{with probability }1-p.
  \end{cases}
  \label{eq:unified-rde}
 \end{equation}
@@ -1083,7 +1092,9 @@ For resistance, we use Thomson's principle in its unit-resistance form:
  =\inf_{\vartheta}\sum_{e\in E(G)}\vartheta_e^2,
 \]
 where the infimum is over unit flows between the boundary vertices of $G$.  Let
-$(\theta_e)$ be the minimizing unit flow in $\mathcal G_n$.  In the
+$(\theta_e)$ be the minimizing unit flow in $\mathcal G_n$. Such a flow
+exists because the feasible flows form a nonempty closed subset of a
+finite-dimensional space and the quadratic energy is coercive. In the
 depth-$r$ copy replacing $e$, take a minimizing unit flow
 and multiply it by $\theta_e$.
 Combining these flows gives a unit flow in $\mathcal G_{n+r}$ with
@@ -1281,8 +1292,8 @@ Consequently, by \eqref{eq:Paley-Zygmund},
 \begin{aligned}
  \frac{(J_n-\log2)_+}{4K}
  &\le\E\left[(J_n-\log2)_+
-   \ind_{\{Z_n\ge\E Z_n/2\}}\right]\\
- &\le\E\left[|X_n-\E X_n|
+   \ind_{\{Z_n\ge\E Z_n/2\}}\right]
+ \\ &\le\E\left[|X_n-\E X_n|
    \ind_{\{Z_n\ge\E Z_n/2\}}\right]
  \le\E|X_n-\E X_n|\le C.
 \end{aligned}
@@ -1312,7 +1323,7 @@ For distance, Chen, Derrida, Duquesne, and
 Shi~\cite{ChenDerridaDuquesneShi2026} showed that, for $p\le1/2$, its
 first-moment logarithmic rate vanishes, that is,
 \begin{equation}
- \lim_{n\to\infty}\frac1n\log\E D_n(p)=0;
+ \lim_{n\to\infty}\frac1n\log\E D_n(p)=0.
  \label{eq:distance-nonpositive-annealed-speed}
 \end{equation}
 Since $D_n(p)\ge1$,
@@ -1374,9 +1385,9 @@ the bound $R_n(1/2)\le D_n(1/2)$, and
 \[
 \begin{aligned}
  0
- =\lim_{n\to\infty}\frac1n\E\log R_n(1/2)
- &\le\liminf_{n\to\infty}\frac1n\log\E R_n(1/2)\\
- &\le\limsup_{n\to\infty}\frac1n\log\E R_n(1/2)
+ &=\lim_{n\to\infty}\frac1n\E\log R_n(1/2)
+ \le\liminf_{n\to\infty}\frac1n\log\E R_n(1/2)
+ \\ &\le\limsup_{n\to\infty}\frac1n\log\E R_n(1/2)
  \le\lim_{n\to\infty}\frac1n\log\E D_n(1/2)=0.
 \end{aligned}
 \]
@@ -1412,6 +1423,7 @@ $\widehat R_n$, then, for every $\tau>0$,
                    \ind_{\{\widehat R_n'>\tau\}}\bigr]
  =\tau+\Pp(\widehat R_n>\tau).
 \]
+First let $n\to\infty$ with $\tau>0$ fixed, and then let $\tau\downarrow0$.
 Consequently $c_n\to0$, and the exact first-moment recursion yields
 \[
 \begin{aligned}
@@ -1433,9 +1445,10 @@ This section is devoted to the proof of
 Theorem~\ref{thm:near-critical-speed}. The following proposition establishes
 the existence of the smallest admissible parameter
 $\lambda_*\in(0,\infty)$ for the boundary-value problem
-\eqref{eq:main-W-bvp}. This existence result is a special case of
-\cite[Proposition~2]{EnguicaGavioliSanchez2013}. An alternative proof of
-Proposition~\ref{prop:Cstar-halfline} is given in Appendix~\ref{app:ode}.
+\eqref{eq:main-W-bvp}. This classification is a special case of the
+admissible-speed theory of Engui\c{c}a, Gavioli, and
+Sanchez~\cite{EnguicaGavioliSanchez2013}. A self-contained proof, including the
+explicit bounds below, is given in Appendix~\ref{app:ode}.
 \begin{proposition}
 \label{prop:Cstar-halfline}
 For $\lambda>0$, consider the boundary-value problem
@@ -1446,7 +1459,7 @@ For $\lambda>0$, consider the boundary-value problem
  W(0)=W(1)=0.
 \end{aligned}
 \end{equation}
-Recall $\lambda>0$ is \emph{admissible} if \eqref{eqn:ode-W} admits a solution
+Recall that $\lambda>0$ is \emph{admissible} if \eqref{eqn:ode-W} admits a solution
 $W\in C([0,1])\cap C^1((0,1))$.
 Then there exists $\lambda_*\in(0,\infty)$ such that $\lambda$ is admissible
 if and only if $\lambda\ge\lambda_*$. Moreover, we have
@@ -1455,17 +1468,20 @@ if and only if $\lambda\ge\lambda_*$. Moreover, we have
 \end{equation}
 \end{proposition}
 \begin{remark}
-  The upper bound $\frac{\sqrt3}{2}$ above is an elementary bound used only to prove the finiteness of $\lambda_*$. In fact, \cite[Proposition~2]{EnguicaGavioliSanchez2013} gives $\lambda_*\le 2^{-1/3}$. The lower bound here is new.
+  The upper bound $\frac{\sqrt3}{2}$ above is an elementary bound used only to prove the finiteness of $\lambda_*$. In fact, the admissible-speed upper bound in~\cite{EnguicaGavioliSanchez2013},
+with $p=3$, $c=2\lambda$, and $f(u)=2u(1-u)$, gives
+$\lambda_*\le 2^{-1/3}$. The lower bound is obtained from the integral
+estimate in Appendix~\ref{app:ode}.
 \end{remark}
 Therefore, in Section~\ref{sec:two-sided-barriers} we focus on proving the asymptotics of $v_R$ and $\gamma_R$.
 We first collect the constants and
 functions used in the proof and then prove the upper and lower bounds for $v_R$.
-Finally, we derive the asymptotics of $\gamma_R$ by utilizing Theorem \ref{thm:first-moment-logarithmic-rates}.
+Finally, we derive the asymptotics of $\gamma_R$ using Theorem~\ref{thm:first-moment-logarithmic-rates}.
 
 From this section onward, we specialize to effective resistance and write
 $v(p):=v_R(p)$.
 
-\subsection{Preliminary}
+\subsection{Preliminaries}
 
 The following lemma calculates the coefficient appearing in the later
 estimates in Lemmas~\ref{lem:weighted-consistency}
@@ -1493,7 +1509,7 @@ With $u=(1+e^r)^{-1}$, symmetry under $u\mapsto1-u$ gives
 \int_0^\infty\bigl(h(r)^2+rh(r)\bigr)\,\dd r
  &=\int_0^{1/2}
    \frac{\log u\log(1-u)}{u(1-u)}\,\dd u
- \\&=\int_0^1\frac{\log u\log(1-u)}u\,\dd u\\
+ =\int_0^1\frac{\log u\log(1-u)}u\,\dd u\\
  &=\sum_{n\ge1}\frac1n
    \int_0^1u^{n-1}(-\log u)\,\dd u
  =\sum_{n\ge1}\frac1{n^3}
@@ -1570,7 +1586,7 @@ Moreover,
  \quad(z\to\infty).
  \label{eq:full-line-tail-ratios}
 \end{equation}
-Consequently, there exists $c_\lambda,C_\lambda>0$ such that
+Consequently, there exist constants $c_\lambda,C_\lambda>0$ such that
 \[
 \begin{aligned}
  \Phi_\lambda(z)\le C_\lambda e^{c_\lambda z}
@@ -1633,7 +1649,7 @@ Moreover,
  \quad(z\to\infty).
  \label{eq:subcritical-right-tail}
 \end{equation}
-Consequently, there exists $c_\lambda,C_\lambda>0$ such that
+Consequently, there exist constants $c_\lambda,C_\lambda>0$ such that
 \[
 \begin{aligned}
  1-\Psi_\lambda(z)\le C_\lambda e^{-c_\lambda z}
@@ -1667,7 +1683,7 @@ integrable $Y_\varepsilon$ with CDF $G_\varepsilon$ satisfying
 \end{align}
 where $F_0$ is the CDF of $X_0=0$.
 
-Indeed, if such $G_\varepsilon$ exists, then order preservation and
+Indeed, if such a CDF $G_\varepsilon$ exists, then order preservation and
 translation covariance in Lemma~\ref{lem:exact-cdf} give inductively
 \[
  F_n^+(x)\ge G_\varepsilon(x-n\kappa\varepsilon^2).
@@ -1720,7 +1736,7 @@ It remains to construct an integrable $Y_\varepsilon$ whose CDF
 $G_\varepsilon$ has the two properties in \eqref{upp_barrier_init}
 and \eqref{upp_barrier_ineq}.
 
-\paragraph*{Step 1: Construct a candidate satisfying \eqref{upp_barrier_ineq}}
+\paragraph*{Step 1: Construct a candidate satisfying \eqref{upp_barrier_ineq}.}
  Let
 $\Phi=\Phi_{\lambda}$ and $q=\Phi'$ be as in
 Proposition~\ref{prop:full-line-distribution}.  For $z_0\in\mathbb R$
@@ -1778,7 +1794,7 @@ Thus $F_{\varepsilon,z_0}$ satisfies the required inequality \eqref{upp_barrier_
 strict margin.  However, it does not satisfy \eqref{upp_barrier_init}, since
 $F_{\varepsilon,z_0}(x)>0=F_0(x)$ for $x<0$.
 
-\paragraph*{Step 2: Use truncation to construct $G_\varepsilon$}
+\paragraph*{Step 2: Use truncation to construct $G_\varepsilon$.}
 Set
 \begin{equation*}
  \alpha_\varepsilon=\varepsilon^4,
@@ -1978,10 +1994,10 @@ $\{g_-(\widetilde Z_1,\widetilde Z_2)\le x\}$ coincide for $x\ge0$, and hence
 \]
 
 For the series-composition map, coordinatewise monotonicity gives
-\(
+\[
  g_+(Z_1,Z_2)
  \le g_+(\widetilde Z_1,\widetilde Z_2).
-\)
+\]
 Thus
 $S_{F_\varepsilon}(x)-S_{G_\varepsilon}(x)$ is the probability that
 \[
@@ -2078,7 +2094,7 @@ integrable \(Z_\varepsilon\) with CDF \(H_\varepsilon\) such that
  \ge H_\varepsilon(x+\kappa\varepsilon^2),
  \qquad x\in\mathbb R.\label{low_one_step}
 \end{align}
-Indeed, if such $H_\varepsilon$ exists, the same induction gives
+Indeed, if such a CDF $H_\varepsilon$ exists, the same induction gives
 \[
  F_n^-(x)\ge H_\varepsilon(x+n\kappa\varepsilon^2),
  \qquad
@@ -2111,14 +2127,14 @@ It remains to construct an integrable $Z_\varepsilon$ whose CDF
 $H_\varepsilon$ has the two properties in \eqref{low_barrier_init} and \eqref{low_one_step}.
 
 
-\paragraph*{Step 1: Construct $H_\varepsilon$ and verify \eqref{low_barrier_init}}
+\paragraph*{Step 1: Construct $H_\varepsilon$ and verify \eqref{low_barrier_init}.}
 Let $\Psi=\Psi_{\lambda}$ and $q=\Psi'$ be as in
 Proposition~\ref{prop:hard-edge-distribution}, using the zero extension of
 $\Psi$, and define
 \[
 H_\varepsilon(x)=\Psi(\varepsilon x),\qquad x\in\mathbb R.
 \]
-This is an absolutely continuous CDF supported on $[0,\infty)$,
+This is an absolutely continuous CDF
 with density
 \[
 \rho_\varepsilon(x)
@@ -2127,13 +2143,13 @@ with density
 The density vanishes on $(-\infty,0)$
 but has the positive right limit
 $\rho_\varepsilon(0+)=\varepsilon q(0)>0$.
-Therefore, $F_0\ge H_\varepsilon$, thus verifying \eqref{low_barrier_init}.
+Since $H_\varepsilon$ is supported on $[0,\infty)$, we have $F_0\ge H_\varepsilon$.
 Moreover, the finite-mean conclusion of
 Proposition~\ref{prop:hard-edge-distribution} shows that the associated random
 variable $Z_\varepsilon$ is integrable.  Thus only \eqref{low_one_step} remains to be verified.
 
-\paragraph*{Step 2: Prove \eqref{low_one_step}}
-We start with a required  estimate for \eqref{low_one_step}.
+\paragraph*{Step 2: Prove \eqref{low_one_step}.}
+We first establish the consistency estimate needed for \eqref{low_one_step}.
 
 \begin{lemma}
 \label{lem:hard-edge-consistency}
@@ -2482,27 +2498,15 @@ Together with \eqref{eq:main-near-critical-limit}, these identities yield
 
 \begin{remark}[Why the exponent $2/3$?]
 \label{rem:two-thirds-heuristic}
-
-The exponent \(2/3\) can be inferred from the orders of the terms in the one-step recursion. To study the scaling of $v_R(\frac12+\delta)=\lim_{n\to\infty}n^{-1}X_n(\frac12+\delta)$ as $\delta\to0$, we compare
-$\mathcal T_{1/2+\delta}F_n^+(\cdot)-F_n^+(\cdot)=F_{n+1}^+(\cdot)-F_n^+(\cdot)$ with the change
-$F_n^+(\cdot-s)-F_n^+(\cdot)$ induced by a translation of size $s$, to be determined. If one can choose $s$, independently of $n$, such that
-$F_{n+1}^+(\cdot)-F_n^+(\cdot)\asymp F_n^+(\cdot-s)-F_n^+(\cdot)$, then heuristically letting $n\to\infty$ gives $v_R(\frac12+\delta)\asymp s$.
-
-To implement this idea, we seek an auxiliary CDF $K$ satisfying
-$\mathcal T_{1/2+\delta}K(\cdot)-K(\cdot)\asymp K(\cdot-s)-K(\cdot)$ and approximating $F_0^+$. This suggests $F_n^+(\cdot)\asymp K(\cdot-ns)$ and hence $v_R(\frac12+\delta)\asymp s$. The construction is guided by the following heuristic:
-
-Let \(K_\eta(x)=K(\eta x)\) be a smooth CDF of width
-\(\eta^{-1}\).  At criticality, the first non-vanishing term in
-\(\mathcal T_{1/2}K_\eta-K_\eta\) is of order \(\eta^3\), whereas the  bias
-$\mathcal T_{1/2+\delta}K_{\eta}(\cdot)-\mathcal T_{1/2}K_{\eta}(\cdot)$  produces a term of order \(\delta\).
-Balancing these contributions gives \(\eta^3\asymp\delta\).  The change \(K_{\eta}(\cdot-s)-K_{\eta}(\cdot)\) caused by translation
-through $s$ has order $s\eta$; matching this with the
-one-step change of order \(\delta\) gives
-\(s\eta\asymp\delta\).  Thus
-\(\eta\asymp\delta^{1/3}\) and
-\(s\asymp\delta^{2/3}\), which predicts the scale of the resistance speed.
-
-
+The exponent $2/3$ is suggested by a balance of scales. Let
+$K_\eta(x)=K(\eta x)$, where $K$ is a smooth CDF for which the consistency
+expansion is valid. The first nonzero symmetric contribution to the one-step
+update has order $\eta^3$, whereas the bias contributes at order $\delta$.
+Balancing these terms gives $\eta^3$ of order $\delta$. A translation by $s$
+changes $K_\eta$ at order $s\eta$, so matching the translation to the one-step
+update gives $s\eta$ of order $\delta$. Thus $\eta$ has order
+$\delta^{1/3}$ and $s$ has order $\delta^{2/3}$. The upper and lower comparison
+arguments above make this scaling prediction rigorous for the logarithmic speed.
 \end{remark}
 
 
@@ -2522,17 +2526,22 @@ subject to
  \label{eq:W-boundary}
 \end{equation}
 
-This appendix gives analysis of an ODE classification that is a special case of known $p$-Laplacian travelling-wave theory. Setting $Y(u)=W(u)^3$ transforms the equation into
+This appendix provides a self-contained proof of the ODE classification needed in Section~\ref{sec:two-sided-barriers} that is a special case of known $p$-Laplacian travelling-wave theory. Setting $Y(u)=W(u)^3$ transforms the equation into
 \[
 Y'=\frac32\{2\lambda Y^{1/3}-2u(1-u)\},
 \]
-which is the case $p=3$, $q=3/2$, $c=2\lambda$, and $f(u)=2u(1-u)$ of Enguiça, Gavioli, and Sanchez~\cite[Proposition~2 and Theorem~3.3]{EnguicaGavioliSanchez2013}. Equivalently, it is the phase-plane equation for the $3$-Laplacian Fisher--KPP travelling waves studied by Audrito and Vázquez~\cite[Theorem~2.1 and Section~3]{AudritoVazquez2017}. 
+which is the case $p=3$, $q=3/2$, $c=2\lambda$, and $f(u)=2u(1-u)$
+of the equation studied by Engui\c{c}a, Gavioli, and
+Sanchez~\cite{EnguicaGavioliSanchez2013}. Equivalently, it is the phase-plane equation for the $3$-Laplacian Fisher--KPP travelling waves studied by Audrito and Vázquez~\cite[Theorem~2.1 and Section~3]{AudritoVazquez2017}.
 
 In the present normalization, we show that there exists a least admissible parameter $\lambda_*>0$: the
 boundary-value problem has a unique positive solution for every
 $\lambda\ge\lambda_*$ and no such solution for $0<\lambda<\lambda_*$.  We
 then determine the possible endpoint asymptotics of these solutions at
-$u=0$. The existence of admissible parameter and the uniqueness of solutions in our work are similar to the analysis in \cite{EnguicaGavioliSanchez2013}, while the endpoint asymptotics in our work are stronger than \cite{EnguicaGavioliSanchez2013}.
+$u=0$. The classification agrees with the travelling-wave theory
+in~\cite{EnguicaGavioliSanchez2013,AudritoVazquez2017}. We give the endpoint
+asymptotics in the present normalization and derive the differentiable
+remainder estimates needed in Appendix~\ref{app:regularity}.
 
 \subsection{Admissible parameters of the ODE}
 
@@ -2556,6 +2565,7 @@ We prove existence and uniqueness for \eqref{eq:y-shooting}, and then
 determine the parameters $\lambda>0$ for which \eqref{eq:y-boundary} also
 holds.
 
+Cube roots throughout this appendix are understood as real cube roots.
 Local existence for \eqref{eq:y-shooting} follows from Peano's theorem, since
 the right-hand side is continuous.  To obtain existence on all of \([0,1]\) and
 uniqueness, we use the following comparison principle; this is needed because
@@ -2591,7 +2601,6 @@ $\mathring I$.  By continuity at the endpoints and
 \(\underline y\le\overline y\) on \(I\).
 \end{proof}
 
-Applying \cite[Proposition 3.(a)(e)(f)]{EnguicaGavioliSanchez2013}, we have the following lemma.
 \begin{lemma}
 \label{lem:shooting-properties}
 For every \(\lambda>0\), equation \eqref{eq:y-shooting} has a unique solution
@@ -2615,6 +2624,68 @@ Finally, \(\lambda\mapsto y_\lambda\) is continuous from \((0,\infty)\) into \(C
 % \]
 \end{lemma}
 
+\begin{proof}
+For fixed
+$\lambda>0$, the function
+\[
+  f_\lambda(t,y)=3t(1-t)-3\lambda\sqrt[3]{y}
+\]
+is continuous on $[0,1]\times\mathbb R$ and satisfies
+\[
+  |f_\lambda(t,y)|
+  \le \frac34+3\lambda+3\lambda|y|.
+\]
+The global form of Peano's existence theorem on a compact time interval,
+under a linear-growth bound, therefore gives a solution of \eqref{eq:y-shooting} on
+$[0,1]$. Since the zero function is a subsolution, Lemma~\ref{lem:cuberoot-comparison} yields
+$y_\lambda\ge0$. Consequently,
+\[
+  y_\lambda'(t)\le3t(1-t),\qquad
+  0\le y_\lambda(t)\le\frac32t^2-t^3\le\frac12
+  \quad(0\le t\le1).
+\]
+If $y_\lambda(t_0)=0$ for some $t_0\in(0,1)$, then $t_0$ is a local
+minimum, so $y_\lambda'(t_0)=0$. This contradicts
+$y_\lambda'(t_0)=3t_0(1-t_0)>0$. Hence $y_\lambda>0$ on $(0,1)$.
+Applying Lemma~\ref{lem:cuberoot-comparison} in both directions to two solutions with the same
+initial condition proves uniqueness.
+
+Let $\lambda_2>\lambda_1>0$. The solution $y_{\lambda_2}$ is a
+subsolution of the equation with parameter $\lambda_1$, because it is
+nonnegative. Thus Lemma~\ref{lem:cuberoot-comparison} gives
+$y_{\lambda_2}\le y_{\lambda_1}$ on $[0,1]$. Set
+$d=y_{\lambda_1}-y_{\lambda_2}$. If $d(t_0)=0$ for some
+$t_0\in(0,1)$, then $d'(t_0)=0$, whereas the equations imply
+\[
+  d'(t_0)
+  =3(\lambda_2-\lambda_1)y_{\lambda_2}(t_0)^{1/3}>0.
+\]
+This contradiction proves the strict inequality in \eqref{eq:shooting-strict-order}.
+
+Finally, using the preceding order relation and the bound
+$y_{\lambda_2}\le1/2$, we obtain, for $0<t<1$,
+\begin{align*}
+  d'(t)
+  &=-3\lambda_1\bigl(y_{\lambda_1}(t)^{1/3}
+                    -y_{\lambda_2}(t)^{1/3}\bigr)
+    +3(\lambda_2-\lambda_1)y_{\lambda_2}(t)^{1/3} \\
+  &\le 3\,2^{-1/3}(\lambda_2-\lambda_1).
+\end{align*}
+Since $d(0)=0$, integration and continuity at the endpoints give
+\[
+  0\le d(t)\le 3\,2^{-1/3}(\lambda_2-\lambda_1)t
+  \quad(0\le t\le1).
+\]
+Interchanging the parameters when necessary shows that
+\[
+  \|y_{\lambda_1}-y_{\lambda_2}\|_{C([0,1])}
+  \le 3\,2^{-1/3}|\lambda_1-\lambda_2|
+  \quad(\lambda_1,\lambda_2>0).
+\]
+In particular, $\lambda\mapsto y_\lambda$ is continuous from
+$(0,\infty)$ into $C([0,1])$.
+\end{proof}
+
 
 For later comparison constructions, it is convenient to introduce the
 following function.  For a differentiable nonnegative function $w$ on an interval, set
@@ -2637,8 +2708,8 @@ $W_\lambda(u)=\bigl[y_\lambda(1-u)\bigr]^{1/3}$
 solves \eqref{eq:W-ode} and \eqref{eq:W-boundary}; for a fixed \(\lambda\), this positive
 solution is unique.
 
-%The proposition below are specialization of Engui\c{c}a, Gavioli, and Sanchez \cite{EnguicaGavioliSanchez2013}.
-Now we are ready to give our own proof of Proposition~\ref{prop:Cstar-halfline}. In our own proof, we get a sharper lower bound for $\lambda_*$ than \cite{EnguicaGavioliSanchez2013}.
+%The proposition below are specialization of Enguiça, Gavioli, and Sanchez \cite{EnguicaGavioliSanchez2013}.
+We now prove Proposition~\ref{prop:Cstar-halfline} and obtain the stated explicit lower bound.
 % \begin{proposition}
 % \label{prop:Cstar-halfline}
 % There exists \(\lambda_*\in(0,\infty)\) such that
@@ -2654,7 +2725,7 @@ Now we are ready to give our own proof of Proposition~\ref{prop:Cstar-halfline}.
 % \end{equation}
 % \end{proposition}
 % \begin{remark}
-%   The upper bound $\frac{\sqrt3}{2}$ above is an elementary bound used only to prove non-emptiness of $\mathcal{A}$. It is not the best bound available from the travelling-wave literature. Indeed, Proposition~2 of Engui\c{c}a, Gavioli, and Sanchez gives $\lambda_*\le 2^{-1/3}$.
+%   The upper bound $\frac{\sqrt3}{2}$ above is an elementary bound used only to prove non-emptiness of $\mathcal{A}$. It is not the best bound available from the travelling-wave literature. Indeed, Proposition~2 of Enguiça, Gavioli, and Sanchez gives $\lambda_*\le 2^{-1/3}$.
 % \end{remark}
 \begin{proof}[Proof of Proposition~\ref{prop:Cstar-halfline}]
 We first show that \(\mathcal A\) is nonempty. Take \(\overline w(t):=\frac{3}{2\lambda}t(1-t)\).
@@ -2725,14 +2796,12 @@ $\lambda_*>0$.
 Finally, Lemma~\ref{lem:shooting-properties} shows that
 $\lambda\mapsto y_\lambda$ is continuous on $(0,\infty)$.  Since
 $\lambda_*>0$, a sequence in $\mathcal A$ decreasing to $\lambda_*$ gives
-$y_{\lambda_*}(1)=0$, so $\lambda_*\in\mathcal A$.  Combining this with the
-upward-closed property proves $\mathcal A=[\lambda_*,\infty)$ and gives the stated upper
-bound for $\lambda_*$.
+$y_{\lambda_*}(1)=0$, so $\lambda_*\in\mathcal A$.  Combining this with $\mathcal{A}$ being upward closed proves $\mathcal A=[\lambda_*,\infty)$ and the upper bound on $\lambda_*$.
 \end{proof}
 
 
 
-\subsection{Asymptotics of \(W_{\lambda}\) at endpoints}
+\subsection{Asymptotics of \texorpdfstring{\(W_{\lambda}\)}{W(lambda)} at endpoints}
 
 For $0<\lambda<\lambda_*$, Lemma~\ref{lem:shooting-properties} and
 Proposition~\ref{prop:Cstar-halfline} imply that $y_\lambda(1)>0$.
@@ -2960,7 +3029,10 @@ Therefore, we have either \(r(x)\to \lambda\) or \(r(x)\to0\), as \(x\to 0\).  T
 
 Using Lemma~\ref{lem:u0-dichotomy}, we now determine the asymptotics of
 $W_\lambda(u)$ at $u=0$ for every $\lambda\in\mathcal A$. Here, the critical/sharp and supercritical/positive alternatives agree with
-\cite{EnguicaGavioliSanchez2013} and the travelling-wave classification and phase-plane analysis \cite{AudritoVazquez2017}. For supercritical asymptotic, our result is stronger than \cite{EnguicaGavioliSanchez2013}.
+\cite{EnguicaGavioliSanchez2013} and the travelling-wave classification
+and phase-plane analysis in~\cite{AudritoVazquez2017}. In particular, we
+identify the linear coefficient $1/\lambda$ explicitly in the supercritical
+branch, in the normalization required for the derivative estimates below.
 
 \begin{proposition}
 \label{prop:critical-branches}
@@ -3003,8 +3075,9 @@ $u=1-t$, we have
 \[
  \mathcal R_{\lambda'}[w]
  =u(\lambda'k-1)+u^2(1-k^3)
- \ge\frac{\lambda_0k-1}{4}u>0.
+ \ge\frac{\lambda_0k-1}{4}u\ge0.
 \]
+The residual is nonnegative on $[0,\eta]$ and positive on $(0,\eta]$.
 At \(t=1-\eta\), since \(W_{\lambda'}(\eta)<k\eta\), the comparison principle gives
 \[
  0\le y_{\lambda'}(t)\le[k(1-t)]^3,
@@ -3406,7 +3479,7 @@ are evaluated at $u=1-\Phi(z)$.  Repeated differentiation gives
  =-\beta W_{\lambda}',\qquad
  \frac{q''}q
  =\beta^2\bigl((W_{\lambda}')^2
-   +W_{\lambda}W_{\lambda}''\bigr),\qquad
+   +W_{\lambda}W_{\lambda}''\bigr),\\
  \frac{q'''}q
  =-\beta^3\bigl((W_{\lambda}')^3
    +4W_{\lambda}W_{\lambda}'W_{\lambda}''
@@ -3462,7 +3535,7 @@ $W_{\lambda}(u)\sim(1-u)/\lambda$ as $u\uparrow1$.  Define
  z(v)=\int_0^v\frac{\dd s}{\beta W_{\lambda}(s)},
  \qquad 0\le v<1.
 \]
-The integrand is continuous at $v=0$, while the linear expansion at $v=1$
+The integrand is continuous at $s=0$, while the linear expansion at $s=1$
 implies $z(v)\to\infty$ as $v\uparrow1$.  Since $z'(v)>0$, the map $z$ is
 a bijection from $[0,1)$ onto $[0,\infty)$.  Its inverse is the function
 $\Psi_{\lambda}$ in \eqref{eq:Psi-subcritical-definition}.  Since
@@ -3570,38 +3643,32 @@ $\overline q_{\lambda}=e^{\overline h}$.  The identities
 prove \eqref{eq:q-extension-bounds}.
 \end{proof}
 
-\section*{Acknowledgments}
-The authors would like to thank Zhan Shi for suggesting this topic.
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+
+During the preparation of this manuscript, the authors used OpenAI
+ChatGPT and Codex to assist with language editing, organization, and
+clarity of presentation.  Their use in the research and formalization
+process is described separately in
+Section~\ref{subsec:ai-methodology}.  The authors reviewed and edited
+all resulting text and take full responsibility for the content of
+the article.
 
 \begin{thebibliography}{99}
 
@@ -3659,14 +3726,14 @@ X.~Chen, T.~Duquesne, and Z.~Shi,
 \emph{Hipster random walks, random series--parallel graph and random homogeneous
 systems},
 arXiv:2511.16880v2 [math.PR], 2026.
-\url{https://doi.org/10.48550/arXiv.2511.16880}
+\url{https://arxiv.org/abs/2511.16880v2}
 
-%
-%
-%
-%
-%
-%
+\bibitem{DingHeLiangZheng2026Software}
+R.~Ding, Z.~He, Y.~Liang, and Y.~Zheng,
+\emph{Lean~4 formalization for Distance and resistance on random series--parallel graphs},
+software release v1.0.2, 2026.
+\url{https://github.com/iyalice/Series-Parallel_lean/releases/tag/v1.0.2}
+
 %
 %
 \bibitem{EnguicaGavioliSanchez2013}
@@ -3709,7 +3776,7 @@ P.~S. Morfe,
 \emph{Analysis of a class of recursive distributional equations including the
 resistance of the series--parallel graph},
 arXiv:2511.11036v3 [math.PR], 2026.
-\url{https://doi.org/10.48550/arXiv.2511.11036}
+\url{https://arxiv.org/abs/2511.11036v3}
 
 \bibitem{SanchezGardunoMaini1994}
 F.~S\'anchez-Gardu\~no and P.~K. Maini,

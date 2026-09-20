@@ -1,0 +1,11 @@
+Lean (version 4.32.1, x86_64-w64-windows-gnu, commit f054605aea4b840552cca2e725580bffd1e1b704, Release)
+Lake version 5.0.0-src+f054605 (Lean version 4.32.1)
+mathlib	520045ab14e26149ee970e2e617ca04b09bde5d6
+plausible	e12c1910fe855cbfc38803cd4e55543906d5fa62
+LeanSearchClient	c5d5b8fe6e5158def25cd28eb94e4141ad97c843
+importGraph	7e9612bf0b9ee66db3cb5b9988a35afc706f5a12
+proofwidgets	6e311e2a844da9b2cc3971187df2fe0066947b93
+aesop	a7dbf0c63b694e47f425f3dcddbc0e178bb432d3
+Qq	38d591e778f100aec9762bb582f9c7f55f50e9dc
+batteries	023ce7d62a0531e22a5331e20b587817a80d49ff
+Cli	88679d088c9720c27ebdf2ba4dafe17341747f94

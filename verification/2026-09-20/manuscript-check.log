@@ -1,0 +1,4 @@
+manuscript audit: PASS (137 labels; 102 main, 35 appendix; SHA-256 2906514bd64faa6f59fe7d9c12ad06ddc0200e8f6c8116aadb9e3e0af8660ba2)
+citations: PASS (18 cited keys; 18 bibliography entries)
+companion synchronization: PASS (140 raw label occurrences; identical bodies and abstracts)
+printed correspondence: PASS (29 results; 21 main, 8 appendix)

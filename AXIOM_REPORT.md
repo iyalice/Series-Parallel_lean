@@ -8,13 +8,13 @@ The project contains exactly two mathematical `axiom` declarations.
 
 With
 
-$$\\
+$$
 \gamma_D(p)=\lim_{n\to\infty}\frac1n\log\mathbb E[D_n(p)],
 $$
 
 the admitted statement is
 
-$$\\
+$$
 \gamma_D\!\left(\frac12\right)=0.
 $$
 
@@ -27,14 +27,14 @@ The Lean declaration is
 Let $t_0<T$, $y_0\in\mathbb R$, and let
 $F:[t_0,T]\times\mathbb R\to\mathbb R$ be continuous. If $A,B\geq0$ and
 
-$$\\
+$$
 |F(t,y)|\leq A+B|y|
 \qquad(t\in[t_0,T],\ y\in\mathbb R),
 $$
 
 then there is a function $y:\mathbb R\to\mathbb R$ such that
 
-$$\\
+$$
 y(t_0)=y_0,\qquad y|_{[t_0,T]}\in C([t_0,T]),\qquad
 y'(t)=F(t,y(t))\quad(t\in(t_0,T)).
 $$
@@ -50,7 +50,10 @@ After omitting Lean's standard logical principles, the project-axiom dependencie
 |---|---|---|
 | Theorem 1.1 | `SeriesParallel.MainText.logarithmicSpeeds` | A1 only |
 | Theorem 1.2 | `SeriesParallel.MainText.firstMomentLogarithmicRates` | A1 only |
-| Theorem 1.3 | `SeriesParallel.MainText.resistanceSpeedNearCritical` | A2 only |
+| Theorem 1.3 (joint coverage) | `SeriesParallel.MainText.resistanceSpeedNearCritical`; `SeriesParallel.MainText.mainAdmissible_eq_Ici_lambdaStar` | A2 only for each declaration |
+| Theorem 1.1, traditional graph | `SeriesParallel.MainText.GraphSemantics.graphLogarithmicSpeeds` | A1 only |
+| Theorem 1.2, traditional graph | `SeriesParallel.MainText.GraphSemantics.graphFirstMomentLogarithmicRates` | A1 only |
+| Theorem 1.3, traditional graph (joint coverage) | `SeriesParallel.MainText.GraphSemantics.graphResistanceSpeedNearCritical`; `SeriesParallel.MainText.mainAdmissible_eq_Ici_lambdaStar` | A2 only for each declaration |
 
 In particular, Theorem 1.3 is independent of A1, while Theorems 1.1 and 1.2 are independent of A2.
 The closed-form identity for the diffusion coefficient, including
@@ -62,3 +65,13 @@ series--parallel model.
 
 The lexical audit reports exactly these two project axioms and no `sorry`, `admit`, `unsafe`, or
 opaque proof escape.
+
+The joint coverage is necessary because `IsLeast mainAdmissible lambdaStar` in
+the near-critical wrappers does not by itself state that every larger parameter
+is admissible. The separate equality with `Set.Ici lambdaStar` supplies this clause.
+It introduces no additional axiom.
+
+These fingerprints were regenerated on 2026-09-20 after a successful full build.
+See [the verification record](verification/2026-09-20/README.md) for the actual
+scalar, traditional-graph, appendix, and joint-coverage outputs, the lexical
+manifest (80 Lean files, two declarations), and reproducible checks.

@@ -1,0 +1,14 @@
+SeriesParallel.MainText.mainAdmissible_eq_Ici_lambdaStar :
+  SeriesParallel.MainText.mainAdmissible = Set.Ici SeriesParallel.Appendix.lambdaStar
+'SeriesParallel.MainText.mainAdmissible_eq_Ici_lambdaStar' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.MainText.resistanceSpeedNearCritical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.MainText.GraphSemantics.graphResistanceSpeedNearCritical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
