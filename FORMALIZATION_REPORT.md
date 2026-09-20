@@ -48,13 +48,13 @@ No `sorry` or `admit` occurs in the Lean sources.
 
 ## Verification
 
-This unreleased manuscript and report revision follows the author's final journal
-source, through the synchronized arXiv companion. The sole repository reference is
-`SeriesParallel.tex`. Its source map records all 137 active labels (102 main, 35
-appendix), their current source lines, and the LF-normalized SHA-256.
-All 140 raw label occurrences, including comments, have matching line numbers in
-the journal, arXiv, and repository sources. The reference differs from arXiv only
-by comment-padded removal of code availability; AI and Lean declarations remain.
+Release v1.0.3 includes the author's latest AI contribution statement. The sole
+reference is `SeriesParallel.tex`. Its source map records all 137 active labels
+(102 main, 35 appendix), current source lines, and the LF-normalized SHA-256.
+The final arXiv companion has the same active label lines and mathematical content.
+The reference omits code availability and retains the AI and Lean declarations.
+The package and software citation versions are 1.0.3. Current release checks and
+source fingerprints are in [verification/v1.0.3](verification/v1.0.3/README.md).
 
 The 29 numbered theorem/proposition/lemma statements are unchanged from the
 previous reference. No Lean source, theorem signature, dependency version, or
@@ -75,4 +75,5 @@ This unlabelled auxiliary improvement is not claimed as a verbatim Lean export.
 The manuscript's comparison with EGS's bounds and endpoint asymptotics is a
 literature comparison, not an additional formalization of EGS's paper.
 
-No release, tag, or package-version change accompanies this revision.
+Release v1.0.3 supersedes the unreleased manuscript/report revision. The earlier
+dated verification records retain their original source hashes and status.

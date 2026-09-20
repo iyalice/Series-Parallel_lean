@@ -18,8 +18,8 @@ its recommendations are distinguished below from the author's accepted text.
 | Flow minimizer and limits | The final text uses a bounded-energy minimizing sequence and a convergent subsequence to explain attainment, and states the order of the normalized-moment limits. |
 | Endpoint inequality | The final formula in Proposition A.6 ends in a non-strict inequality, including the zero endpoint. The previously proposed extra explanatory sentence was withdrawn. |
 | EGS comparison | Published Proposition 2, Lemma 3.1(a), and Theorem 3.3 support the specific comparisons described below. The author's shortened wording is preserved. |
-| Source map and filename | Regenerated against `SeriesParallel.tex`: 137 active labels, 102 main and 35 appendix. All 140 raw label lines agree across journal, arXiv, and reference sources. All 29 numbered result statements are unchanged from the previous reference. |
-| Code availability | The repository reference omits this block with comment padding. The journal and arXiv companions retain identical author-approved code-availability text, including its link to the preceding revision; this update does not silently replace that link. The current reference and evidence are identified by their stored hashes. |
+| Source map and filename | Regenerated against `SeriesParallel.tex`: 137 active labels, 102 main and 35 appendix. All 137 active label lines agree with the final arXiv companion; three historical commented labels remain only in the reference. All 29 numbered result statements are unchanged from the previous reference. |
+| Code availability | The repository reference omits this block with comment padding. The final arXiv companion identifies release v1.0.3 and its fixed commit. The current reference and release evidence are identified by their stored hashes; earlier companion versions are historical. |
 | Build and trust boundary | No Lean sources or external hypotheses changed. Current verification results and fingerprints are recorded under `verification/2026-09-21`; the previous dated evidence is preserved. |
 
 ## Qualified auxiliary coverage
@@ -64,4 +64,6 @@ This update synchronizes the author's accepted text and rechecks its references
 and compiled numbering mechanically. It does not claim a new comprehensive
 literature search or a Lean formalization of the cited papers. The previous
 checks of other cited works are not represented as newly repeated checks here.
-AI and Lean declarations remain, and no release or tag is created.
+AI and Lean declarations remain, including the author's subsequent AI contribution
+statement. Release v1.0.3 packages the revision; its fresh checks are recorded in
+[verification/v1.0.3](verification/v1.0.3/README.md).

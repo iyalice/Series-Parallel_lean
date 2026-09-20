@@ -6,8 +6,9 @@ theorems is complete relative to the two documented external inputs.
 
 The sole manuscript reference for this repository and its reports is
 [SeriesParallel.tex](SeriesParallel.tex).
-It follows the author-approved final journal source through the arXiv companion.
-All 140 raw label occurrences have the same line numbers across the three sources.
+It includes the author's latest AI contribution statement. All 137 active label
+occurrences have the same line numbers as the final arXiv companion; historical
+commented labels are excluded from this comparison.
 Its active labels, source lines, and content fingerprint are recorded in
 [SOURCE_MAP.md](SOURCE_MAP.md).
 
@@ -108,10 +109,12 @@ The manuscript check can also run without `--aux` to validate its fingerprint, l
 source-map order, and ownership without compiling LaTeX. Run these commands from the repository
 root. Python 3 and a LaTeX installation are required for the respective checks.
 
-The current manuscript/report revision is unreleased; the package version remains
-1.0.2. The project is distributed under the Apache-2.0 license.
+The current release is [v1.0.3](https://github.com/iyalice/Series-Parallel_lean/releases/tag/v1.0.3).
+The package and software citation versions are 1.0.3. The project is distributed
+under the Apache-2.0 license.
 
 The current reference retains the AI and Lean declarations and omits code availability.
 The 2026-09-21 build, axiom outputs, source fingerprints, and reproduction commands are
 in [verification/2026-09-21](verification/2026-09-21/README.md). The review response is
-recorded in [REVISION_REVIEW.md](REVISION_REVIEW.md).
+recorded in [REVISION_REVIEW.md](REVISION_REVIEW.md). The release checks and current
+source fingerprints are in [verification/v1.0.3](verification/v1.0.3/README.md).

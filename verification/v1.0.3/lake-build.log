@@ -1,0 +1,397 @@
+⚠ [8668/8733] Replayed SeriesParallel.Appendix.AdmissibleLowerBound
+warning: SeriesParallel/Appendix/AdmissibleLowerBound.lean:105:32: Variable name `hrhoHalf` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SeriesParallel/Appendix/AdmissibleLowerBound.lean:167:51: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: SeriesParallel/Appendix/AdmissibleLowerBound.lean:483:47: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: SeriesParallel/Appendix/AdmissibleLowerBound.lean:469:68: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SeriesParallel/Appendix/AdmissibleLowerBound.lean:481:47: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SeriesParallel/Appendix/AdmissibleLowerBound.lean:483:43: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8670/8733] Replayed SeriesParallel.Appendix.LeftEndpointDichotomy
+warning: SeriesParallel/Appendix/LeftEndpointDichotomy.lean:51:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SeriesParallel/Appendix/LeftEndpointDichotomy.lean:329:5: Variable name `hu0` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SeriesParallel/Appendix/LeftEndpointDichotomy.lean:329:20: Variable name `hW0` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SeriesParallel/Appendix/LeftEndpointDichotomy.lean:501:5: Variable name `hlambda` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SeriesParallel/Appendix/LeftEndpointDichotomy.lean:735:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: SeriesParallel/Appendix/LeftEndpointDichotomy.lean:1138:43: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SeriesParallel/Appendix/LeftEndpointDichotomy.lean:1138:53: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SeriesParallel/Appendix/LeftEndpointDichotomy.lean:1211:28: Variable name `heta` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SeriesParallel/Appendix/LeftEndpointDichotomy.lean:1311:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8671/8733] Replayed SeriesParallel.Appendix.FiniteAsymptoticODE
+info: SeriesParallel/Appendix/FiniteAsymptoticODE.lean:1848:8: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: SeriesParallel/Appendix/FiniteAsymptoticODE.lean:2664:36: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [iteratedDeriv_one, F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵a̵p̵p̵l̵y̵,̵ ̵deriv_comp t hfUt.differentiableAt_one hUt.differentiableAt_one,
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲deriv_comp t hfVt.differentiableAt_one hVt.differentiableAt_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SeriesParallel/Appendix/FiniteAsymptoticODE.lean:2697:17: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵a̵p̵p̵l̵y̵,̵ ̵i̵t̵e̵r̵a̵t̵e̵d̵D̵e̵r̵i̵v̵_̵o̵n̵e̵]̵[̲i̲t̲e̲r̲a̲t̲e̲d̲D̲e̲r̲i̲v̲_̲o̲n̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SeriesParallel/Appendix/FiniteAsymptoticODE.lean:2776:17: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵a̵p̵p̵l̵y̵,̵ ̵i̵t̵e̵r̵a̵t̵e̵d̵D̵e̵r̵i̵v̵_̵o̵n̵e̵]̵[̲i̲t̲e̲r̲a̲t̲e̲d̲D̲e̲r̲i̲v̲_̲o̲n̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SeriesParallel/Appendix/FiniteAsymptoticODE.lean:2953:22: This simp argument is unused:
+  inv_pow
+
+Hint: Omit it from the simp argument list.
+  simp [zpow_neg,̵ ̵i̵n̵v̵_̵p̵o̵w̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [8689/8733] Replayed SeriesParallel.Appendix.LinearBranchRegularity
+info: SeriesParallel/Appendix/LinearBranchRegularity.lean:499:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: SeriesParallel/Appendix/LinearBranchRegularity.lean:1409:4: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: SeriesParallel/Appendix/LinearBranchRegularity.lean:1536:4: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [8695/8733] Replayed SeriesParallel.MainText.MainTextStatementContract
+info: SeriesParallel/MainText/MainTextStatementContract.lean:160:0: SeriesParallel.MainText.LogarithmicSpeedsStatement : Prop
+info: SeriesParallel/MainText/MainTextStatementContract.lean:161:0: SeriesParallel.MainText.FirstMomentLogarithmicRatesStatement : Prop
+info: SeriesParallel/MainText/MainTextStatementContract.lean:162:0: SeriesParallel.MainText.ResistanceSpeedNearCriticalStatement : Prop
+ℹ [8718/8733] Replayed SeriesParallel.Audit
+info: SeriesParallel/Audit.lean:15:0: 'SeriesParallel.Appendix.cuberoot_comparison_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:16:0: 'SeriesParallel.Appendix.shootingProperties' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:17:0: 'SeriesParallel.Appendix.cstarHalfline' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:18:0: 'SeriesParallel.Appendix.existsUnique_boundarySolution_iff_lambdaStar_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:19:0: 'SeriesParallel.Appendix.subcriticalW' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:20:0: 'SeriesParallel.Appendix.linearAtOne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:21:0: 'SeriesParallel.Appendix.WSolution_linearAtOne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:22:0: 'SeriesParallel.Appendix.leftEndpoint_sourceLocalInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:23:0: 'SeriesParallel.Appendix.leftEndpointDichotomy_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:24:0: 'SeriesParallel.Appendix.criticalBranches' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:27:0: 'SeriesParallel.Appendix.finiteAsymptoticODE_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:28:0: 'SeriesParallel.Appendix.leftLinearBranchRegularity_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:29:0: 'SeriesParallel.Appendix.rightLinearBranchRegularity_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:30:0: 'SeriesParallel.Appendix.linearBranchRegularity_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:31:0: 'SeriesParallel.Appendix.existsUnique_exactWaveProfile_of_linear_branches' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:32:0: 'SeriesParallel.Appendix.waveProfile_exactSource' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:33:0: 'SeriesParallel.Appendix.waveRelativeDerivatives' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:34:0: 'SeriesParallel.Appendix.exists_exactHardEdgeProfile_uniqueOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:35:0: 'SeriesParallel.Appendix.subcriticalProfile_exactSource' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:36:0: 'SeriesParallel.Appendix.subcriticalProfile' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+info: SeriesParallel/Audit.lean:37:0: 'SeriesParallel.Appendix.IsExactWaveProfile.strictMono' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:38:0: 'SeriesParallel.Appendix.IsExactHardEdgeProfile.strictMonoOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:41:0: 'SeriesParallel.Appendix.waveProfileLaw_probability_with_finiteAbsoluteFirstMoment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:42:0: 'SeriesParallel.Appendix.hardEdgeLaw_probability_with_finiteMean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:43:0: 'SeriesParallel.Appendix.hardEdgeLaw_singleton_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:44:0: 'SeriesParallel.Appendix.hardEdge_probabilityLaw_singleton_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:45:0: 'SeriesParallel.AppendixPublicAPI.wave_density_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:46:0: 'SeriesParallel.AppendixPublicAPI.hardEdge_density_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:47:0: 'SeriesParallel.Appendix.IsNormalizedHardEdgeProfile.hardEdgeDensity_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:48:0: 'SeriesParallel.Appendix.IsNormalizedHardEdgeProfile.hardEdgeDensity_zero_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:49:0: 'SeriesParallel.Appendix.IsNormalizedHardEdgeProfile.hardEdgeDensity_eq_deriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:50:0: 'SeriesParallel.Appendix.IsNormalizedHardEdgeProfile.hardEdgeDensity_zero_eq_derivWithin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:51:0: 'SeriesParallel.Appendix.hardEdgeCDF_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:52:0: 'SeriesParallel.Appendix.hardEdgeCDF_strictMonoOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:53:0: 'SeriesParallel.AppendixPublicAPI.zeroExtendedHardEdgeDensity_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:54:0: 'SeriesParallel.AppendixPublicAPI.zeroExtendedHardEdgeDensity_eq_probabilityDensity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:55:0: 'SeriesParallel.AppendixPublicAPI.hardEdgeLaw_eq_withDensity_zeroExtended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:58:0: 'SeriesParallel.Appendix.finiteAsymptoticODE' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:59:0: 'SeriesParallel.Appendix.linearBranchRegularity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SeriesParallel/Audit.lean:60:0: 'SeriesParallel.Appendix.exists_waveProfile_probabilityLaw_with_finiteAbsoluteFirstMoment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:61:0: 'SeriesParallel.Appendix.exists_hardEdge_probabilityLaw_with_finiteMean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SeriesParallel/Audit.lean:62:0: 'SeriesParallel.Appendix.hardEdgeCDF_not_differentiableAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [8721/8733] Replayed SeriesParallel.MainText.WeightedConsistency
+warning: SeriesParallel/MainText/WeightedConsistency.lean:222:59: This simp argument is unused:
+  Finset.sum_empty
+
+Hint: Omit it from the simp argument list.
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero, F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵e̵m̵p̵t̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵Nat.choose_zero_right, Nat.cast_one,
+  ̲  ̲ ̲ ̲one_mul, pow_zero, zero_add, Nat.sub_zero,
+  ̵  ̵ ̵ ̵Nat.choose_self, Nat.cast_ofNat, Nat.sub_self,
+  ̲  ̲ ̲ ̲iteratedDeriv_zero, mul_zero,
+  ̵  ̵ ̵ ̵add_zero, zero_mul] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SeriesParallel/MainText/WeightedConsistency.lean:224:21: This simp argument is unused:
+  Nat.cast_ofNat
+
+Hint: Omit it from the simp argument list.
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero, Finset.sum_empty,
+  ̵  ̵ ̵ ̵Nat.choose_zero_right,
+  ̲  ̲ ̲ ̲Nat.cast_one, one_mul, pow_zero, zero_add, Nat.sub_zero,
+  ̵  ̵ ̵ ̵Nat.choose_self, Nat.c̵a̵st̵_̵o̵u̲b̲_̲s̲e̲l̲fN̵a̵t̵,
+  ̲ N̵a̵t̵.̵s̵u̵b̵_̵s̵e̵l̵f̵,̵  ̲ ̲iteratedDeriv_zero, mul_zero,
+  ̵  ̵ ̵ ̵add_zero, zero_mul] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SeriesParallel/MainText/WeightedConsistency.lean:224:71: This simp argument is unused:
+  mul_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero, Finset.sum_empty,
+  ̵  ̵ ̵ ̵Nat.choose_zero_right,
+  ̲  ̲ ̲ ̲Nat.cast_one, one_mul, pow_zero, zero_add, Nat.sub_zero,
+  ̵  ̵ ̵ ̵Nat.choose_self, Nat.cast_ofNat,
+  ̲  ̲ ̲ ̲Nat.sub_self, iteratedDeriv_zero, m̵u̵l̵_̵z̵e̵r̵o̵,̵
+  ̵ ̵ ̵ ̵ ̵add_zero, zero_mul] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SeriesParallel/MainText/WeightedConsistency.lean:243:59: This simp argument is unused:
+  Finset.sum_empty
+
+Hint: Omit it from the simp argument list.
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero, F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵e̵m̵p̵t̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵Nat.choose_zero_right, Nat.cast_one,
+  ̲  ̲ ̲ ̲one_mul, pow_zero, zero_add,
+  ̵  ̵ ̵ ̵Nat.choose, Nat.cast_ofNat, Nat.reduceSub, iteratedDeriv_zero,
+  ̲  ̲ ̲ ̲add_zero] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SeriesParallel/MainText/WeightedConsistency.lean:244:4: This simp argument is unused:
+  Nat.choose_zero_right
+
+Hint: Omit it from the simp argument list.
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero, Finset.sum_empty,
+  ̵  ̵ ̵ ̵Nat.ch̵o̵o̵s̵e̵_̵z̵e̵r̵o̵_̵r̵i̵g̵h̵t̵,̵ ̵N̵at̵.̵c̵a̵st_one, one_mul,
+  ̲  ̲ ̲ ̲pow_zero, zero_add,
+  ̵  ̵ ̵ ̵Nat.choose, Nat.cast_ofNat, Nat.reduceSub, iteratedDeriv_zero,
+  ̲  ̲ ̲ ̲add_zero] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SeriesParallel/MainText/WeightedConsistency.lean:245:16: This simp argument is unused:
+  Nat.cast_ofNat
+
+Hint: Omit it from the simp argument list.
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero, Finset.sum_empty,
+  ̵  ̵ ̵ ̵Nat.choose_zero_right,
+  ̲  ̲ ̲ ̲Nat.cast_one, one_mul, pow_zero, zero_add,
+  ̵  ̵ ̵ ̵Nat.choose, Nat.c̵a̵s̵t̵_̵o̵f̵N̵a̵t̵,̵ ̵N̵a̵t̵.̵reduceSub, iteratedDeriv_zero,
+  ̲  ̲ ̲ ̲add_zero] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SeriesParallel/MainText/WeightedConsistency.lean:279:46: Variable name `hB` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SeriesParallel/MainText/WeightedConsistency.lean:494:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: SeriesParallel/MainText/WeightedConsistency.lean:479:12: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SeriesParallel/MainText/WeightedConsistency.lean:538:10: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: SeriesParallel/MainText/WeightedConsistency.lean:707:6: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: SeriesParallel/MainText/WeightedConsistency.lean:975:39: Variable name `hK` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SeriesParallel/MainText/WeightedConsistency.lean:1140:39: Variable name `hK` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SeriesParallel/MainText/WeightedConsistency.lean:1364:2: 'congr 1' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8722/8733] Replayed SeriesParallel.MainText.UpperBarrier
+warning: SeriesParallel/MainText/UpperBarrier.lean:528:57: This simp argument is unused:
+  Pi.sub_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [R, Function.comp_apply, Pi.add_apply, Pi.s̵u̵b̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵P̵i̵.̵mul_apply, id_eq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SeriesParallel/MainText/UpperBarrier.lean:529:10: This simp argument is unused:
+  Pi.mul_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [R, Function.comp_apply, Pi.add_apply, Pi.sub_apply, P̵i̵.̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵ ̵id_eq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SeriesParallel/MainText/UpperBarrier.lean:511:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SeriesParallel/MainText/UpperBarrier.lean:926:50: Variable name `hx` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: SeriesParallel/MainText/UpperBarrier.lean:951:37: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: SeriesParallel/MainText/UpperBarrier.lean:951:33: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SeriesParallel/MainText/UpperBarrier.lean:954:15: Variable name `hx` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SeriesParallel/MainText/UpperBarrier.lean:1607:19: Variable name `hepsilon` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SeriesParallel/MainText/UpperBarrier.lean:1899:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+ℹ [8731/8733] Replayed SeriesParallel.MainTextAudit
+info: SeriesParallel/MainTextAudit.lean:10:0: 'SeriesParallel.MainText.logarithmicSpeeds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.MainText.distanceGamma_half_eq_zero]
+info: SeriesParallel/MainTextAudit.lean:11:0: 'SeriesParallel.MainText.firstMomentLogarithmicRates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.MainText.distanceGamma_half_eq_zero]
+info: SeriesParallel/MainTextAudit.lean:12:0: 'SeriesParallel.MainText.resistanceSpeedNearCritical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+Build completed successfully (8733 jobs).

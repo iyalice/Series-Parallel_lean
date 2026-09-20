@@ -1,7 +1,7 @@
 # Manuscript--Lean source map
 
 Authoritative TeX: `SeriesParallel.tex`
-SHA-256 (UTF-8, LF-normalized): `3ae0cbb7743bd3fe4241b71cf3bc56dd67a99f9483cc6b1e00b965bdd1bc363a`
+SHA-256 (UTF-8, LF-normalized): `a5034c47dea2bbe6d47af58dea3154ea9a74db5d165bbd695d6f6fcd5955b677`
 
 The table contains every active TeX label, in source order, after comments and literal
 `\iffalse` branches are removed. The `\appendix` command is at line 2503. There are **137 distinct
@@ -16,11 +16,11 @@ near-critical theorem and its admissible-halfline characterization. `standard` a
 `Classical.choice`, and `Quot.sound`; the two project assumptions are stated in
 `AXIOM_REPORT.md`.
 
-The reference follows the author-approved final journal source through its
-arXiv companion. All 140 raw label occurrences, including commented labels,
-share the same source lines in all three files. The code-availability block
-is replaced by comment-only lines in the reference. Source fingerprints and
-the synchronization check are in [the verification record](verification/2026-09-21/README.md).
+The release reference includes the author's latest AI contribution statement.
+All 137 active labels share their source lines with the final arXiv companion.
+The reference retains three historical commented labels; these are not counted
+as active labels. Code availability is omitted. Current fingerprints and release
+checks are in [verification/v1.0.3](verification/v1.0.3/README.md).
 
 | TeX label | Label line / TeX owner | Kind | Implementation owner | Lean declaration | Module | Status | Trust boundary |
 |---|---:|---|---|---|---|---|---|
