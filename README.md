@@ -19,7 +19,7 @@ depth $n$.
 1. **Theorem 1.1 (logarithmic speeds).** For every $p\in[0,1]$, there are deterministic constants
    $v_D(p)$ and $v_R(p)$ such that
    
-   $$
+   $$\\
    \frac{1}{n}\log D_n(p)\longrightarrow v_D(p),\qquad
    \frac{1}{n}\log R_n(p)\longrightarrow v_R(p)
    $$
@@ -29,14 +29,14 @@ depth $n$.
 
 2. **Theorem 1.2 (first-moment logarithmic rates).** For every $p\in[0,1]$, the limits
    
-   $$
+   $$\\
    \gamma_D(p)=\lim_{n\to\infty}\frac{1}{n}\log\mathbb E D_n(p),\qquad
    \gamma_R(p)=\lim_{n\to\infty}\frac{1}{n}\log\mathbb E R_n(p)
    $$
    
    exist and satisfy
    
-   $$
+   $$\\
    \gamma_D(p)=v_D(p),\qquad
    \gamma_R(p)=v_R(p)\vee\log(2p),
    $$
@@ -47,14 +47,14 @@ depth $n$.
 3. **Theorem 1.3 (resistance speed near criticality).** Let $\lambda_{\ast}$ be the least positive
    $\lambda$ for which
    
-   $$
+   $$\\
    W^2W'-\lambda W+u(1-u)=0,\qquad W(0)=W(1)=0,
    $$
    
    has a solution $W\in C([0,1])\cap C^1((0,1))$ that is positive on $(0,1)$. Then, as
    $\delta\downarrow0$,
    
-   $$
+   $$\\
    v_R\left(\frac12+\delta\right)
    =-v_R\left(\frac12-\delta\right)
    \sim 2\zeta(3)^{1/3}\lambda_*\delta^{2/3},
@@ -62,7 +62,7 @@ depth $n$.
    
    and
    
-   $$
+   $$\\
    \gamma_R\left(\frac12+\delta\right)
    \sim 2\zeta(3)^{1/3}\lambda_*\delta^{2/3},\qquad
    \gamma_R\left(\frac12-\delta\right)\sim-2\delta.
