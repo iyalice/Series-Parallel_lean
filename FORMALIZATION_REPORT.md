@@ -1,7 +1,7 @@
 # Formalization report
 
 Status: **main theorems complete relative to the stated inputs; auxiliary qualifications below**
-Manuscript: `Series_Parallel.tex`
+Manuscript: `SeriesParallel.tex`
 
 ## Main result
 
@@ -48,29 +48,31 @@ No `sorry` or `admit` occurs in the Lean sources.
 
 ## Verification
 
-This unreleased manuscript and report revision was checked on 2026-09-20.
-The sole reference is `Series_Parallel.tex`; its source map records the current
-LF-normalized SHA-256, all 137 labels (102 main, 35 appendix), and their source lines.
-A fresh LaTeX build verified all 29 printed theorem/proposition/lemma numbers.
-The AI and Lean declarations are retained; only the code-availability section is
-omitted from this repository reference, with comment padding preserving source lines.
+This unreleased manuscript and report revision follows the author's final journal
+source, through the synchronized arXiv companion. The sole repository reference is
+`SeriesParallel.tex`. Its source map records all 137 active labels (102 main, 35
+appendix), their current source lines, and the LF-normalized SHA-256.
+All 140 raw label occurrences, including comments, have matching line numbers in
+the journal, arXiv, and repository sources. The reference differs from arXiv only
+by comment-padded removal of code availability; AI and Lean declarations remain.
 
-The full `lake build` completed successfully (8733 jobs) on the proof source tree
-at `3c9592d72c8c5a77f8c47ecbbfc1c13b69264416`, using the pinned dependencies.
-No existing proof source, theorem signature, or external input was changed.
-The added `SeriesParallel/JointCoverageAudit.lean` separately checks the two
-near-critical wrappers and the admissible-halfline theorem. All four audit modules
-were run successfully; their actual output is archived in
-[verification/2026-09-20](verification/2026-09-20/README.md).
+The 29 numbered theorem/proposition/lemma statements are unchanged from the
+previous reference. No Lean source, theorem signature, dependency version, or
+external input was changed from commit `5afa967ce186ddba102d6801152330541e2b0d34`.
+The existing joint-coverage audit checks the two near-critical wrappers and the
+admissible-halfline identity. Current build, audit, LaTeX, and correspondence
+results are recorded in [verification/2026-09-21](verification/2026-09-21/README.md).
+The earlier dated evidence directory is retained as a historical record.
 
-The lexical audit covers 80 Lean files, finds exactly the two documented project
-axioms, and finds no proof placeholders or escapes. The scalar and graph theorem
-fingerprints and the halfline theorem have the dependencies listed in
-[AXIOM_REPORT.md](AXIOM_REPORT.md). These are fresh checks, not a restatement of
-the archived release's verification.
+The lexical audit covers 80 Lean files and the two documented project axioms.
+The scalar, graph, and halfline fingerprints are recorded in
+[AXIOM_REPORT.md](AXIOM_REPORT.md). Joint coverage is stated in the reports;
+the manuscript wording is preserved rather than augmented by audit terminology.
 
 For Lemma A.2, Lean proves the stated continuity with Lipschitz constant
 `3 * (3/4)^(1/3)`. The manuscript proof gives the sharper constant `3 * 2^(-1/3)`.
 This unlabelled auxiliary improvement is not claimed as a verbatim Lean export.
+The manuscript's comparison with EGS's bounds and endpoint asymptotics is a
+literature comparison, not an additional formalization of EGS's paper.
 
 No release, tag, or package-version change accompanies this revision.

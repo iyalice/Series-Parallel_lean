@@ -66,7 +66,7 @@ the cube-root shooting equation are proved inside the project. In particular,
 the nonlinearity is not assumed locally Lipschitz at zero. The manuscript's
 self-contained proof of Lemma A.2 has the same separation of responsibilities.
 
-The trust boundary was rechecked on 2026-09-20. The current manuscript is
-`Series_Parallel.tex`; [AXIOM_REPORT.md](AXIOM_REPORT.md) and the
-[verification record](verification/2026-09-20/README.md) document the actual
+The trust boundary was rechecked on 2026-09-21. The current manuscript is
+`SeriesParallel.tex`; [AXIOM_REPORT.md](AXIOM_REPORT.md) and the
+[verification record](verification/2026-09-21/README.md) document the actual
 source scan and theorem fingerprints. No new external hypothesis was introduced.

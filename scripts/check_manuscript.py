@@ -11,7 +11,7 @@ import hashlib
 from pathlib import Path
 import re
 
-MANUSCRIPT = "Series_Parallel.tex"
+MANUSCRIPT = "SeriesParallel.tex"
 CONDITIONAL_RE = re.compile(r"\\(iffalse|if[a-zA-Z@]+|else|fi)\b")
 
 def strip_tex_comments(text: str) -> str:
@@ -127,12 +127,13 @@ def audit(aux_path=None, spa_path=None, arxiv_path=None):
         if any(ref != MANUSCRIPT for ref in refs):
             errors.append(f'{report} refers to another TeX source: {refs}')
     for required in ['Declaration of generative AI', 'Lean~4',
-                     r'\label{subsec:ai-methodology}',
-                     r'mainAdmissible\_eq\_Ici\_lambdaStar']:
+                     r'\label{subsec:ai-methodology}']:
         if required not in active:
-            errors.append(f'missing required declaration or coverage qualification: {required}')
+            errors.append(f'missing required declaration: {required}')
     if 'Code availability' in active:
         errors.append('repository reference must omit the code-availability section')
+    # The author's manuscript wording is authoritative. The explicit joint-coverage
+    # qualification belongs to the reports and must not be injected into the TeX.
     for report in ['README.md', 'SOURCE_MAP.md', 'FORMALIZATION_REPORT.md',
                    'MANUSCRIPT_LEAN_CORRESPONDENCE.md', 'AXIOM_REPORT.md']:
         report_text = Path(report).read_text(encoding='utf-8')

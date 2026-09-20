@@ -1,0 +1,40 @@
+{
+  "spa": {
+    "source": "Series-Parallel_SPA_submission_final.tex",
+    "sha256_lf": "5e6a5a46bfc469d43e12414ef002d00a1d75f19fd3fad14ba842d0a2cdf594e3",
+    "sha256_bytes": "5e6a5a46bfc469d43e12414ef002d00a1d75f19fd3fad14ba842d0a2cdf594e3",
+    "pages": 35,
+    "warnings": [
+      "Package microtype Warning: Unable to apply patch `footnote' on input line 39.",
+      "Overfull \\hbox (117.0831pt too wide) detected at line 114",
+      "Package hyperref Warning: Ignoring empty anchor on input line 114.",
+      "Package hyperref Warning: Ignoring empty anchor on input line 114."
+    ]
+  },
+  "arxiv": {
+    "source": "Series-Parallel_arxiv_submission.tex",
+    "sha256_lf": "4974aa7d0b44de3cee8a528fdedc96c72d379130dd8e1b4f18a265cfe4023418",
+    "sha256_bytes": "4974aa7d0b44de3cee8a528fdedc96c72d379130dd8e1b4f18a265cfe4023418",
+    "pages": 41,
+    "warnings": [
+      "Package microtype Warning: Unable to apply patch `footnote' on input line 48."
+    ]
+  },
+  "reference": {
+    "source": "SeriesParallel.tex",
+    "sha256_lf": "3ae0cbb7743bd3fe4241b71cf3bc56dd67a99f9483cc6b1e00b965bdd1bc363a",
+    "sha256_bytes": "3ae0cbb7743bd3fe4241b71cf3bc56dd67a99f9483cc6b1e00b965bdd1bc363a",
+    "pages": 41,
+    "warnings": [
+      "Package microtype Warning: Unable to apply patch `footnote' on input line 48."
+    ]
+  },
+  "checks": {
+    "same_abstract_and_body": true,
+    "all_raw_label_lines_equal": 140,
+    "active_labels": 137,
+    "printed_label_numbers_identical": true,
+    "numbered_results_unchanged": 29,
+    "reference_omits_only_code_availability": true
+  }
+}

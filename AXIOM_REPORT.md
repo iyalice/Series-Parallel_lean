@@ -71,7 +71,7 @@ the near-critical wrappers does not by itself state that every larger parameter
 is admissible. The separate equality with `Set.Ici lambdaStar` supplies this clause.
 It introduces no additional axiom.
 
-These fingerprints were regenerated on 2026-09-20 after a successful full build.
-See [the verification record](verification/2026-09-20/README.md) for the actual
+These fingerprints were regenerated on 2026-09-21 after a successful full build.
+See [the verification record](verification/2026-09-21/README.md) for the actual
 scalar, traditional-graph, appendix, and joint-coverage outputs, the lexical
 manifest (80 Lean files, two declarations), and reproducible checks.

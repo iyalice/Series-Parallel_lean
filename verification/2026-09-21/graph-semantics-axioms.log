@@ -1,0 +1,36 @@
+'SeriesParallel.MainText.SPNetwork.traditionalDistance_realize' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.MainText.SPNetwork.traditionalResistance_realize' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.MainText.GraphSemantics.graphDistanceValue_eq_distanceValue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.MainText.GraphSemantics.graphResistanceValue_eq_resistanceValue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.MainText.GraphSemantics.graphLogarithmicSpeeds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.MainText.distanceGamma_half_eq_zero]
+'SeriesParallel.MainText.GraphSemantics.graphFirstMomentLogarithmicRates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.MainText.distanceGamma_half_eq_zero]
+'SeriesParallel.MainText.GraphSemantics.graphResistanceSpeedNearCritical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.MainText.logarithmicSpeeds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.MainText.distanceGamma_half_eq_zero]
+'SeriesParallel.MainText.firstMomentLogarithmicRates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.MainText.distanceGamma_half_eq_zero]
+'SeriesParallel.MainText.resistanceSpeedNearCritical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]

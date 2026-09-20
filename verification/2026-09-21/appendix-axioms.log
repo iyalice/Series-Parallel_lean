@@ -1,0 +1,110 @@
+'SeriesParallel.Appendix.cuberoot_comparison_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.shootingProperties' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.cstarHalfline' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.existsUnique_boundarySolution_iff_lambdaStar_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.subcriticalW' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.linearAtOne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.WSolution_linearAtOne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.leftEndpoint_sourceLocalInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.leftEndpointDichotomy_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.criticalBranches' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.finiteAsymptoticODE_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.leftLinearBranchRegularity_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.rightLinearBranchRegularity_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.linearBranchRegularity_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.existsUnique_exactWaveProfile_of_linear_branches' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.waveProfile_exactSource' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.waveRelativeDerivatives' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.exists_exactHardEdgeProfile_uniqueOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.subcriticalProfile_exactSource' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.subcriticalProfile' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]
+'SeriesParallel.Appendix.IsExactWaveProfile.strictMono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.IsExactHardEdgeProfile.strictMonoOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.waveProfileLaw_probability_with_finiteAbsoluteFirstMoment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.hardEdgeLaw_probability_with_finiteMean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.hardEdgeLaw_singleton_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.hardEdge_probabilityLaw_singleton_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.AppendixPublicAPI.wave_density_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.AppendixPublicAPI.hardEdge_density_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.IsNormalizedHardEdgeProfile.hardEdgeDensity_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.IsNormalizedHardEdgeProfile.hardEdgeDensity_zero_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.IsNormalizedHardEdgeProfile.hardEdgeDensity_eq_deriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.IsNormalizedHardEdgeProfile.hardEdgeDensity_zero_eq_derivWithin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.hardEdgeCDF_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.hardEdgeCDF_strictMonoOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.AppendixPublicAPI.zeroExtendedHardEdgeDensity_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.AppendixPublicAPI.zeroExtendedHardEdgeDensity_eq_probabilityDensity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.AppendixPublicAPI.hardEdgeLaw_eq_withDensity_zeroExtended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.finiteAsymptoticODE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.linearBranchRegularity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SeriesParallel.Appendix.exists_waveProfile_probabilityLaw_with_finiteAbsoluteFirstMoment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.exists_hardEdge_probabilityLaw_with_finiteMean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SeriesParallel.Appendix.hardEdgeCDF_not_differentiableAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

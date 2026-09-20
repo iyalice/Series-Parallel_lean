@@ -1,0 +1,4 @@
+SeriesParallel.MainText.logarithmicSpeeds	standard=['Classical.choice', 'Quot.sound', 'propext']	project=['SeriesParallel.MainText.distanceGamma_half_eq_zero']
+SeriesParallel.MainText.firstMomentLogarithmicRates	standard=['Classical.choice', 'Quot.sound', 'propext']	project=['SeriesParallel.MainText.distanceGamma_half_eq_zero']
+SeriesParallel.MainText.resistanceSpeedNearCritical	standard=['Classical.choice', 'Quot.sound', 'propext']	project=['SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval']
+project-axiom audit: PASS (2 declarations, 3 theorem fingerprints)

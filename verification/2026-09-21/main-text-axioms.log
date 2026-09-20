@@ -1,0 +1,12 @@
+'SeriesParallel.MainText.logarithmicSpeeds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.MainText.distanceGamma_half_eq_zero]
+'SeriesParallel.MainText.firstMomentLogarithmicRates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.MainText.distanceGamma_half_eq_zero]
+'SeriesParallel.MainText.resistanceSpeedNearCritical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SeriesParallel.ManualInterfaces.MI01_global_peano_on_compact_interval]

@@ -13,7 +13,7 @@ authors:
     given-names: Yutao
   - family-names: Zheng
     given-names: Yushu
-repository-code: "https://github.com/iyalice/Series-Parallel"
+repository-code: "https://github.com/iyalice/Series-Parallel_lean"
 license: Apache-2.0
 keywords:
   - Lean 4

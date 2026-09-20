@@ -68,8 +68,7 @@ Mathematical Sciences, University of Chinese Academy of Sciences, Beijing 100049
 \address{School of Mathematics, Shanghai University of Finance and Economics,
 Shanghai 200433, China}
 \email{yszheng666@gmail.com}
-\keywords{Random series--parallel graph; graph distance; effective resistance;
-logarithmic speeds; near-critical asymptotics}
+\keywords{random series--parallel graph; graph distance; effective resistance; logarithmic speeds; near-critical asymptotics}
 \begin{abstract}
 We study the graph distance $D_n(p)$ and effective resistance
 $R_n(p)$ between the boundary vertices of a depth-$n$ random series--parallel
@@ -97,6 +96,7 @@ obtained by Chen, Derrida, Duquesne, and Shi (2026). The three main theorems and
   pdfkeywords={random series--parallel graph; graph distance; effective
     resistance; logarithmic speeds; near-critical asymptotics}
 }
+% Source-line alignment.
 % Source-line alignment.
 % Source-line alignment.
 % Source-line alignment.
@@ -471,7 +471,7 @@ expected energy $(\E R_r(p))R_n(p)$.  Taking expectations gives first-moment
 submultiplicativity, and Fekete's subadditive lemma then gives the desired rates.  See
 Lemma~\ref{lem:first-moment-submultiplicativity} for details.
 
-In the supercritical regime $p>1/2$, the main remaining issue is to show that, for both
+The main remaining issue is to show that, for both
 $D_n(p)$ and $R_n(p)$, the gap between the logarithm of the mean and the mean
 logarithm, which we call the Jensen gap, is $o(n)$. For $p>1/2$, on the respective events
 $\{D_n(p)\ge\E D_n(p)/2\}$ and $\{R_n(p)\ge\E R_n(p)/2\}$, the corresponding
@@ -516,9 +516,8 @@ equation in Theorem~\ref{thm:near-critical-speed}:
  W^2W'-\lambda W+u(1-u)=0.
 \]
 The self-contained analysis in Appendices~\ref{app:ode} and
-\ref{app:regularity} provides the profiles and estimates needed to construct
-\(G_\varepsilon\). The relation to travelling-wave theory is discussed in
-Appendix~\ref{app:ode}.
+\ref{app:regularity} provides estimates
+needed to construct \(G_\varepsilon\).
 
 
 
@@ -526,10 +525,8 @@ Appendix~\ref{app:ode}.
 
 \begin{remark}
     The differential equation in Theorem~\ref{thm:near-critical-speed} comes
-directly from the above comparison between the CDF update and the translation.
-Fix $\lambda>\lambda_*$ and let $\Phi=\Phi_\lambda$ be the profile in
-Proposition~\ref{prop:full-line-distribution}. Test the operator on the slowly
-varying CDF $F_{\varepsilon,z_0}(x)=\Phi(z_0+\varepsilon x)$, with
+directly from the above comparison between the CDF update and the translation. Test the operator on a slowly varying CDF
+$F_{\varepsilon,z_0}(x)=\Phi(z_0+\varepsilon x)$, with
 $q=\Phi'$.  Lemma~\ref{lem:exact-cdf} and
 Lemma~\ref{lem:weighted-consistency} give, for all $x$ and $z_0$,
 \[
@@ -601,9 +598,8 @@ ODE analysis used in the upper and lower bound arguments of Section~\ref{sec:two
 
 For real-valued random variables $U$ and $V$, we write
 $U\stle V$ when $U$ is stochastically dominated by $V$.  We write
-$x_+:=\max\{x,0\}$ unless otherwise specified.   For positive quantities, $f\asymp g$
-means that their ratio is bounded above and below by positive constants in
-the stated regime.  Unless stated otherwise, $c$ and $C$ denote finite
+$x_+:=\max\{x,0\}$ unless otherwise specified. Unless stated otherwise,
+$c$ and $C$ denote finite
 positive constants whose values may change from line to line.
 
 \subsection{AI-assisted proof development and formal verification}
@@ -638,18 +634,9 @@ source map.  The formalization is complete relative to the following
 two explicitly isolated external mathematical inputs:
 \(    \gamma_D(1/2)=0, \)
 and compact-interval Peano existence for scalar ordinary differential
-equations under continuity and a linear-growth bound.  Thus the
-formal verification does not claim an unconditional derivation of
-these two inputs within Lean.  All remaining project-specific
+equations under continuity and a linear-growth bound.    All remaining project-specific
 dependencies of the three main theorem declarations are proved within
-the formal development. Theorem~\ref{thm:near-critical-speed} is covered
-jointly by the public near-critical theorem and the admissible-halfline identity
-\texttt{mainAdmissible\_eq\_Ici\_lambdaStar}; the same qualification applies
-to the traditional graph formulation. Coverage of the main theorems and their
-proof dependencies does not mean that every auxiliary formula or constant is
-exported verbatim. The correspondence report records these distinctions.
-The archived software release is cited in~\cite{DingHeLiangZheng2026Software}.
-
+the formal development.
 \section{Preliminaries}
 \label{sec:preliminaries}
 
@@ -1092,9 +1079,9 @@ For resistance, we use Thomson's principle in its unit-resistance form:
  =\inf_{\vartheta}\sum_{e\in E(G)}\vartheta_e^2,
 \]
 where the infimum is over unit flows between the boundary vertices of $G$.  Let
-$(\theta_e)$ be the minimizing unit flow in $\mathcal G_n$. Such a flow
-exists because the feasible flows form a nonempty closed subset of a
-finite-dimensional space and the quadratic energy is coercive. In the
+$(\theta_e)$ be a minimizing unit flow in $\mathcal G_n$. Such a flow
+exists: a minimizing sequence has bounded energy, so its finitely many edge
+currents have a convergent subsequence whose limit is again a unit flow. In the
 depth-$r$ copy replacing $e$, take a minimizing unit flow
 and multiply it by $\theta_e$.
 Combining these flows gives a unit flow in $\mathcal G_{n+r}$ with
@@ -1445,10 +1432,10 @@ This section is devoted to the proof of
 Theorem~\ref{thm:near-critical-speed}. The following proposition establishes
 the existence of the smallest admissible parameter
 $\lambda_*\in(0,\infty)$ for the boundary-value problem
-\eqref{eq:main-W-bvp}. This classification is a special case of the
-admissible-speed theory of Engui\c{c}a, Gavioli, and
-Sanchez~\cite{EnguicaGavioliSanchez2013}. A self-contained proof, including the
-explicit bounds below, is given in Appendix~\ref{app:ode}.
+\eqref{eq:main-W-bvp}. The existence and uniqueness classification is a
+special case of \cite[Proposition~2]{EnguicaGavioliSanchez2013}.
+A self-contained proof, including the explicit bounds below, is given in
+Appendix~\ref{app:ode}.
 \begin{proposition}
 \label{prop:Cstar-halfline}
 For $\lambda>0$, consider the boundary-value problem
@@ -1468,10 +1455,13 @@ if and only if $\lambda\ge\lambda_*$. Moreover, we have
 \end{equation}
 \end{proposition}
 \begin{remark}
-  The upper bound $\frac{\sqrt3}{2}$ above is an elementary bound used only to prove the finiteness of $\lambda_*$. In fact, the admissible-speed upper bound in~\cite{EnguicaGavioliSanchez2013},
-with $p=3$, $c=2\lambda$, and $f(u)=2u(1-u)$, gives
-$\lambda_*\le 2^{-1/3}$. The lower bound is obtained from the integral
-estimate in Appendix~\ref{app:ode}.
+  The upper bound $\frac{\sqrt3}{2}$ above is an elementary bound used only to prove the finiteness of $\lambda_*$.
+ The estimate in
+\cite[Proposition~2]{EnguicaGavioliSanchez2013} gives
+\( \lambda_*\le2^{-1/3}\), and the quantitative lower bound in
+\cite[Lemma~3.1(a)]{EnguicaGavioliSanchez2013} is zero.
+The explicit positive lower bound in \eqref{eq:Z-halfline} follows from
+the integral estimate in Appendix~\ref{app:ode}.
 \end{remark}
 Therefore, in Section~\ref{sec:two-sided-barriers} we focus on proving the asymptotics of $v_R$ and $\gamma_R$.
 We first collect the constants and
@@ -2149,7 +2139,7 @@ Proposition~\ref{prop:hard-edge-distribution} shows that the associated random
 variable $Z_\varepsilon$ is integrable.  Thus only \eqref{low_one_step} remains to be verified.
 
 \paragraph*{Step 2: Prove \eqref{low_one_step}.}
-We first establish the consistency estimate needed for \eqref{low_one_step}.
+We start with a required  estimate for \eqref{low_one_step}.
 
 \begin{lemma}
 \label{lem:hard-edge-consistency}
@@ -2499,8 +2489,8 @@ Together with \eqref{eq:main-near-critical-limit}, these identities yield
 \begin{remark}[Why the exponent $2/3$?]
 \label{rem:two-thirds-heuristic}
 The exponent $2/3$ is suggested by a balance of scales. Let
-$K_\eta(x)=K(\eta x)$, where $K$ is a smooth CDF for which the consistency
-expansion is valid. The first nonzero symmetric contribution to the one-step
+$K_\eta(x)=K(\eta x)$, where $K$ is a smooth CDF for which the one-step
+expansion used above is valid. The first nonzero symmetric contribution to the one-step
 update has order $\eta^3$, whereas the bias contributes at order $\delta$.
 Balancing these terms gives $\eta^3$ of order $\delta$. A translation by $s$
 changes $K_\eta$ at order $s\eta$, so matching the translation to the one-step
@@ -2528,20 +2518,22 @@ subject to
 
 This appendix provides a self-contained proof of the ODE classification needed in Section~\ref{sec:two-sided-barriers} that is a special case of known $p$-Laplacian travelling-wave theory. Setting $Y(u)=W(u)^3$ transforms the equation into
 \[
-Y'=\frac32\{2\lambda Y^{1/3}-2u(1-u)\},
+Y'=\frac32(2\lambda Y^{1/3}-2u(1-u)),
 \]
 which is the case $p=3$, $q=3/2$, $c=2\lambda$, and $f(u)=2u(1-u)$
 of the equation studied by Engui\c{c}a, Gavioli, and
-Sanchez~\cite{EnguicaGavioliSanchez2013}. Equivalently, it is the phase-plane equation for the $3$-Laplacian Fisher--KPP travelling waves studied by Audrito and Vázquez~\cite[Theorem~2.1 and Section~3]{AudritoVazquez2017}.
+Sanchez~\cite[Proposition~2 and Theorem~3.3]{EnguicaGavioliSanchez2013}. Equivalently, it is the phase-plane equation for the $3$-Laplacian Fisher--KPP travelling waves studied by Audrito and Vázquez~\cite[Theorem~2.1 and Section~3]{AudritoVazquez2017}.
 
 In the present normalization, we show that there exists a least admissible parameter $\lambda_*>0$: the
 boundary-value problem has a unique positive solution for every
 $\lambda\ge\lambda_*$ and no such solution for $0<\lambda<\lambda_*$.  We
 then determine the possible endpoint asymptotics of these solutions at
-$u=0$. The classification agrees with the travelling-wave theory
-in~\cite{EnguicaGavioliSanchez2013,AudritoVazquez2017}. We give the endpoint
-asymptotics in the present normalization and derive the differentiable
-remainder estimates needed in Appendix~\ref{app:regularity}.
+$u=0$. The existence and uniqueness classification is given by
+\cite[Proposition~2]{EnguicaGavioliSanchez2013}, and the critical and
+supercritical branches are identified in
+\cite[Theorem~3.3]{EnguicaGavioliSanchez2013}. Our analysis determines the
+precise linear asymptotic in the supercritical branch and the differentiable
+remainder estimates needed in the Appendix~\ref{app:regularity}.
 
 \subsection{Admissible parameters of the ODE}
 
@@ -3028,11 +3020,14 @@ Therefore, we have either \(r(x)\to \lambda\) or \(r(x)\to0\), as \(x\to 0\).  T
 \end{proof}
 
 Using Lemma~\ref{lem:u0-dichotomy}, we now determine the asymptotics of
-$W_\lambda(u)$ at $u=0$ for every $\lambda\in\mathcal A$. Here, the critical/sharp and supercritical/positive alternatives agree with
-\cite{EnguicaGavioliSanchez2013} and the travelling-wave classification
-and phase-plane analysis in~\cite{AudritoVazquez2017}. In particular, we
-identify the linear coefficient $1/\lambda$ explicitly in the supercritical
-branch, in the normalization required for the derivative estimates below.
+$W_\lambda(u)$ at $u=0$ for every $\lambda\in\mathcal A$.
+The critical asymptotic agrees with
+\cite[Theorem~3.3(b)]{EnguicaGavioliSanchez2013}.
+For $\lambda>\lambda_*$, \cite[Theorem~3.3(a)]{EnguicaGavioliSanchez2013}
+gives $W_\lambda(u)=o(\sqrt u)$ as $u\downarrow0$, whereas we prove the
+sharper asymptotic $W_\lambda(u)\sim u/\lambda$.
+See also the related travelling-wave classification and phase-plane analysis
+in~\cite{AudritoVazquez2017}.
 
 \begin{proposition}
 \label{prop:critical-branches}
@@ -3077,7 +3072,6 @@ $u=1-t$, we have
  =u(\lambda'k-1)+u^2(1-k^3)
  \ge\frac{\lambda_0k-1}{4}u\ge0.
 \]
-The residual is nonnegative on $[0,\eta]$ and positive on $(0,\eta]$.
 At \(t=1-\eta\), since \(W_{\lambda'}(\eta)<k\eta\), the comparison principle gives
 \[
  0\le y_{\lambda'}(t)\le[k(1-t)]^3,
@@ -3535,7 +3529,7 @@ $W_{\lambda}(u)\sim(1-u)/\lambda$ as $u\uparrow1$.  Define
  z(v)=\int_0^v\frac{\dd s}{\beta W_{\lambda}(s)},
  \qquad 0\le v<1.
 \]
-The integrand is continuous at $s=0$, while the linear expansion at $s=1$
+The function $z(v)$ is continuous at $v=0$, while the linear expansion at $s=1$
 implies $z(v)\to\infty$ as $v\uparrow1$.  Since $z'(v)>0$, the map $z$ is
 a bijection from $[0,1)$ onto $[0,\infty)$.  Its inverse is the function
 $\Psi_{\lambda}$ in \eqref{eq:Psi-subcritical-definition}.  Since

@@ -1,9 +1,14 @@
 # Manuscript--Lean correspondence
 
-Authoritative manuscript source: `Series_Parallel.tex`. The table follows its
+Authoritative manuscript source: `SeriesParallel.tex`. The table follows its
 printed numbering. It contains all 29 theorem, proposition, and lemma environments: 21 in the main
 text and 8 in the appendices. TeX labels and TeX line numbers are intentionally confined to
 [SOURCE_MAP.md](SOURCE_MAP.md).
+
+The 2026-09-21 update preserves all 29 numbered result statements and all Lean
+sources. Only manuscript wording, source positions, and the reference filename
+change. Verification and source fingerprints are recorded in
+[verification/2026-09-21](verification/2026-09-21/README.md).
 
 Unqualified Lean names below lie in `SeriesParallel.MainText` or `SeriesParallel.Appendix` as
 appropriate.

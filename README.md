@@ -2,10 +2,12 @@
 
 This repository accompanies *Distance and resistance on random series--parallel graphs:
 logarithmic speeds and near-critical asymptotics*. The Lean 4 formalization of all three main
-theorems is complete.
+theorems is complete relative to the two documented external inputs.
 
 The sole manuscript reference for this repository and its reports is
-[Series_Parallel.tex](Series_Parallel.tex).
+[SeriesParallel.tex](SeriesParallel.tex).
+It follows the author-approved final journal source through the arXiv companion.
+All 140 raw label occurrences have the same line numbers across the three sources.
 Its active labels, source lines, and content fingerprint are recorded in
 [SOURCE_MAP.md](SOURCE_MAP.md).
 
@@ -98,8 +100,8 @@ lake build
 To compile the manuscript and verify the reports against its printed numbering, run:
 
 ```text
-latexmk -pdf -interaction=nonstopmode -halt-on-error Series_Parallel.tex
-python scripts/check_manuscript.py --aux Series_Parallel.aux
+latexmk -pdf -interaction=nonstopmode -halt-on-error SeriesParallel.tex
+python scripts/check_manuscript.py --aux SeriesParallel.aux
 ```
 
 The manuscript check can also run without `--aux` to validate its fingerprint, labels,
@@ -110,6 +112,6 @@ The current manuscript/report revision is unreleased; the package version remain
 1.0.2. The project is distributed under the Apache-2.0 license.
 
 The current reference retains the AI and Lean declarations and omits code availability.
-The 2026-09-20 build, axiom outputs, source fingerprints, and reproduction commands are
-in [verification/2026-09-20](verification/2026-09-20/README.md). The review response is
+The 2026-09-21 build, axiom outputs, source fingerprints, and reproduction commands are
+in [verification/2026-09-21](verification/2026-09-21/README.md). The review response is
 recorded in [REVISION_REVIEW.md](REVISION_REVIEW.md).
